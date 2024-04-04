@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wedding Planner System", "Wedding Planner System.csproj", "{9B39DC78-1A73-4956-A395-735120851468}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wedding System.API", "Wedding System.API", "{8B8592E0-1C7F-4D55-A427-3CF6DC2F6AE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business Logic Layer", "..\Business Logic Layer\Business Logic Layer.csproj", "{2E754951-D076-4EEA-9081-8A517D34238C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data Access Layer", "..\Data Access Layer\Data Access Layer.csproj", "{14FCE22A-3993-461F-8686-490EE0E4192E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wedding System.Business", "Wedding System.Business", "{356EC73D-2443-4B50-879F-3093132016D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wedding System.Data", "Wedding System.Data", "{D1806D35-847D-4BE8-BF5D-F0288985487C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B39DC78-1A73-4956-A395-735120851468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B39DC78-1A73-4956-A395-735120851468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B39DC78-1A73-4956-A395-735120851468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B39DC78-1A73-4956-A395-735120851468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E754951-D076-4EEA-9081-8A517D34238C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E754951-D076-4EEA-9081-8A517D34238C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E754951-D076-4EEA-9081-8A517D34238C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E754951-D076-4EEA-9081-8A517D34238C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14FCE22A-3993-461F-8686-490EE0E4192E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14FCE22A-3993-461F-8686-490EE0E4192E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14FCE22A-3993-461F-8686-490EE0E4192E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14FCE22A-3993-461F-8686-490EE0E4192E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9B39DC78-1A73-4956-A395-735120851468} = {8B8592E0-1C7F-4D55-A427-3CF6DC2F6AE3}
+		{2E754951-D076-4EEA-9081-8A517D34238C} = {356EC73D-2443-4B50-879F-3093132016D3}
+		{14FCE22A-3993-461F-8686-490EE0E4192E} = {D1806D35-847D-4BE8-BF5D-F0288985487C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D002D5E-C332-4A78-BC89-B7DF29DBC6CF}
+	EndGlobalSection
+EndGlobal

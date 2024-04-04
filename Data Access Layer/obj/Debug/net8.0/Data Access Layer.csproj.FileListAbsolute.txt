@@ -1,0 +1,14 @@
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\Data Access Layer.csproj.AssemblyReference.cache
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\Data Access Layer.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\Data Access Layer.AssemblyInfoInputs.cache
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\Data Access Layer.AssemblyInfo.cs
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\Data Access Layer.csproj.CoreCompileInputs.cache
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\bin\Debug\net8.0\Data Access Layer.deps.json
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\bin\Debug\net8.0\Data Access Layer.runtimeconfig.json
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\bin\Debug\net8.0\Data Access Layer.dll
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\bin\Debug\net8.0\Data Access Layer.pdb
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\Data Access Layer.dll
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\refint\Data Access Layer.dll
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\Data Access Layer.pdb
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\Data Access Layer.genruntimeconfig.cache
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\ref\Data Access Layer.dll

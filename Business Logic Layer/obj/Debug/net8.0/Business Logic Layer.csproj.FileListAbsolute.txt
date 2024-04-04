@@ -1,0 +1,15 @@
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.csproj.AssemblyReference.cache
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.AssemblyInfoInputs.cache
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.AssemblyInfo.cs
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.csproj.CoreCompileInputs.cache
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\bin\Debug\net8.0\Business Logic Layer.deps.json
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\bin\Debug\net8.0\Business Logic Layer.dll
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\bin\Debug\net8.0\Business Logic Layer.pdb
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\bin\Debug\net8.0\Data Access Layer.dll
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\bin\Debug\net8.0\Data Access Layer.pdb
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business.6AB683E1.Up2Date
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.dll
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\refint\Business Logic Layer.dll
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.pdb
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\ref\Business Logic Layer.dll

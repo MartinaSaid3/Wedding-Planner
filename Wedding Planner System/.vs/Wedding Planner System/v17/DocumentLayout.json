@@ -1,0 +1,448 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\wedding planner system\\wedding planner system.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:wedding planner system.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Migrations\\20240404175731_newproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240404175731_newproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\wedding planner system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\wedding planner system\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14FCE22A-3993-461F-8686-490EE0E4192E}|..\\Data Access Layer\\Data Access Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\data access layer\\repo\\reservationrepo\\reservationdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14FCE22A-3993-461F-8686-490EE0E4192E}|..\\Data Access Layer\\Data Access Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\data access layer\\context\\applicationentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\wedding planner system\\controllers\\ratecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:controllers\\ratecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\business logic layer\\service\\reservationservice\\reservationbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\business logic layer\\service\\reservationservice\\ireservationbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14FCE22A-3993-461F-8686-490EE0E4192E}|..\\Data Access Layer\\Data Access Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\data access layer\\repo\\reservationrepo\\ireservationdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\wedding planner system\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\wedding planner system\\controllers\\venuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:controllers\\venuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\wedding planner system\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14FCE22A-3993-461F-8686-490EE0E4192E}|..\\Data Access Layer\\Data Access Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\data access layer\\models\\rate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14FCE22A-3993-461F-8686-490EE0E4192E}|..\\Data Access Layer\\Data Access Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\data access layer\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14FCE22A-3993-461F-8686-490EE0E4192E}|..\\Data Access Layer\\Data Access Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\data access layer\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14FCE22A-3993-461F-8686-490EE0E4192E}|..\\Data Access Layer\\Data Access Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\data access layer\\models\\venue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\business logic layer\\dtos\\venuedtos\\venuewithreservationiddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\business logic layer\\dtos\\venuedtos\\venuedtowithreservationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\business logic layer\\dtos\\venuedtos\\venuedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\business logic layer\\dtos\\reservationdtos\\reservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\business logic layer\\dtos\\ratingdtos\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\business logic layer\\dtos\\accountdtos\\resetpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\business logic layer\\dtos\\accountdtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\business logic layer\\dtos\\accountdtos\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\iti\\new\\graduation project\\wedding planner system\\business logic layer\\dtos\\accountdtos\\forgetpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Wedding Planner System",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Wedding Planner System.csproj",
+              "RelativeDocumentMoniker": "Wedding Planner System.csproj",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Wedding Planner System.csproj",
+              "RelativeToolTip": "Wedding Planner System.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-04T17:59:37.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20240404175731_newproject.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Migrations\\20240404175731_newproject.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240404175731_newproject.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Migrations\\20240404175731_newproject.cs",
+              "RelativeToolTip": "Migrations\\20240404175731_newproject.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T17:57:32.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAqwBoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T17:38:56.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-04T17:38:35.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReservationDAL.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Repo\\ReservationRepo\\ReservationDAL.cs",
+              "RelativeDocumentMoniker": "..\\Data Access Layer\\Repo\\ReservationRepo\\ReservationDAL.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Repo\\ReservationRepo\\ReservationDAL.cs",
+              "RelativeToolTip": "..\\Data Access Layer\\Repo\\ReservationRepo\\ReservationDAL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T17:24:39.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RateController.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Controllers\\RateController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RateController.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Controllers\\RateController.cs",
+              "RelativeToolTip": "Controllers\\RateController.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAswDYAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T15:04:29.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationEntity.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Context\\ApplicationEntity.cs",
+              "RelativeDocumentMoniker": "..\\Data Access Layer\\Context\\ApplicationEntity.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Context\\ApplicationEntity.cs",
+              "RelativeToolTip": "..\\Data Access Layer\\Context\\ApplicationEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T15:00:34.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReservationBLL.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Service\\ReservationService\\ReservationBLL.cs",
+              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Service\\ReservationService\\ReservationBLL.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Service\\ReservationService\\ReservationBLL.cs",
+              "RelativeToolTip": "..\\Business Logic Layer\\Service\\ReservationService\\ReservationBLL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T17:35:08.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ReservationController.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Controllers\\ReservationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReservationController.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Controllers\\ReservationController.cs",
+              "RelativeToolTip": "Controllers\\ReservationController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T15:03:08.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "VenuesController.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Controllers\\VenuesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VenuesController.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Controllers\\VenuesController.cs",
+              "RelativeToolTip": "Controllers\\VenuesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJgBAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T15:02:19.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IReservationBLL.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Service\\ReservationService\\IReservationBLL.cs",
+              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Service\\ReservationService\\IReservationBLL.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Service\\ReservationService\\IReservationBLL.cs",
+              "RelativeToolTip": "..\\Business Logic Layer\\Service\\ReservationService\\IReservationBLL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T17:21:24.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Wedding Planner System\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHYAAACWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T15:02:44.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IReservationDAL.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Repo\\ReservationRepo\\IReservationDAL.cs",
+              "RelativeDocumentMoniker": "..\\Data Access Layer\\Repo\\ReservationRepo\\IReservationDAL.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Repo\\ReservationRepo\\IReservationDAL.cs",
+              "RelativeToolTip": "..\\Data Access Layer\\Repo\\ReservationRepo\\IReservationDAL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T17:24:33.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Rate.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Models\\Rate.cs",
+              "RelativeDocumentMoniker": "..\\Data Access Layer\\Models\\Rate.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Models\\Rate.cs",
+              "RelativeToolTip": "..\\Data Access Layer\\Models\\Rate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:58:20.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "..\\Data Access Layer\\Models\\ApplicationUser.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "..\\Data Access Layer\\Models\\ApplicationUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:57:27.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Models\\Reservation.cs",
+              "RelativeDocumentMoniker": "..\\Data Access Layer\\Models\\Reservation.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Models\\Reservation.cs",
+              "RelativeToolTip": "..\\Data Access Layer\\Models\\Reservation.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAADwvwoAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:58:07.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Venue.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Models\\Venue.cs",
+              "RelativeDocumentMoniker": "..\\Data Access Layer\\Models\\Venue.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Models\\Venue.cs",
+              "RelativeToolTip": "..\\Data Access Layer\\Models\\Venue.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:58:39.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "VenueWithReservationIdDto.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\VenueDtos\\VenueWithReservationIdDto.cs",
+              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Dtos\\VenueDtos\\VenueWithReservationIdDto.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\VenueDtos\\VenueWithReservationIdDto.cs",
+              "RelativeToolTip": "..\\Business Logic Layer\\Dtos\\VenueDtos\\VenueWithReservationIdDto.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAiwAgAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:51:47.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "VenueDtoWithReservationData.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDtoWithReservationData.cs",
+              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDtoWithReservationData.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDtoWithReservationData.cs",
+              "RelativeToolTip": "..\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDtoWithReservationData.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAIwAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:51:11.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "VenueDto.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDto.cs",
+              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDto.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDto.cs",
+              "RelativeToolTip": "..\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:50:23.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ReservationDto.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\ReservationDtos\\ReservationDto.cs",
+              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Dtos\\ReservationDtos\\ReservationDto.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\ReservationDtos\\ReservationDto.cs",
+              "RelativeToolTip": "..\\Business Logic Layer\\Dtos\\ReservationDtos\\ReservationDto.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:50:03.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RatingDto.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\RatingDtos\\RatingDto.cs",
+              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Dtos\\RatingDtos\\RatingDto.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\RatingDtos\\RatingDto.cs",
+              "RelativeToolTip": "..\\Business Logic Layer\\Dtos\\RatingDtos\\RatingDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:48:52.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ResetPasswordDto.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\AccountDtos\\ResetPasswordDto.cs",
+              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Dtos\\AccountDtos\\ResetPasswordDto.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\AccountDtos\\ResetPasswordDto.cs",
+              "RelativeToolTip": "..\\Business Logic Layer\\Dtos\\AccountDtos\\ResetPasswordDto.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:48:12.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "RegisterUserDto.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\AccountDtos\\RegisterUserDto.cs",
+              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Dtos\\AccountDtos\\RegisterUserDto.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\AccountDtos\\RegisterUserDto.cs",
+              "RelativeToolTip": "..\\Business Logic Layer\\Dtos\\AccountDtos\\RegisterUserDto.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAiwAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:47:39.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "LoginUserDto.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\AccountDtos\\LoginUserDto.cs",
+              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Dtos\\AccountDtos\\LoginUserDto.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\AccountDtos\\LoginUserDto.cs",
+              "RelativeToolTip": "..\\Business Logic Layer\\Dtos\\AccountDtos\\LoginUserDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:47:13.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ForgetPasswordDto.cs",
+              "DocumentMoniker": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\AccountDtos\\ForgetPasswordDto.cs",
+              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Dtos\\AccountDtos\\ForgetPasswordDto.cs",
+              "ToolTip": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Dtos\\AccountDtos\\ForgetPasswordDto.cs",
+              "RelativeToolTip": "..\\Business Logic Layer\\Dtos\\AccountDtos\\ForgetPasswordDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:46:48.965Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
