@@ -6,8 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Business_Logic_Layer.Dtos.ReservationDtos;
 using Data_Access_Layer.Models;
+
 using Business_Logic_Layer.Service.EmailService;
 using Hangfire;
+
+using System;
+using Business_Logic_Layer.Service.VenueService;
+using Data_Access_Layer.Repo.VenueRepo;
+
 
 namespace Wedding_Planner_System.Controllers
 {
@@ -106,6 +112,38 @@ namespace Wedding_Planner_System.Controllers
 
             return NoContent();
         }
+
+        [HttpPut("Accept/{id}")]
+        public async Task<IActionResult> AcceptReservation(int id)
+        {
+            // Call the business logic layer method
+            bool accepted = await ReservationBLL.AcceptReservation(id);
+            if (accepted)
+            {
+                return Ok(" Reservation submission accepted successfully.");
+            }
+            else
+            {
+                return NotFound(); // reservation not found
+            }
+        }
+
+        [HttpPut("Reject/{id}")]
+        public async Task<IActionResult> RejectReservation(int id)
+        {
+            // Call the business logic layer method
+            bool rejected = await ReservationBLL.RejectReservationSubmission(id);
+            if (rejected)
+            {
+                return Ok("Reservation submission rejected successfully.");
+            }
+            else
+            {
+                return NotFound(); // reservation not found
+            }
+        }
+
+
 
     }
 }

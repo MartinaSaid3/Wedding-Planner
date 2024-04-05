@@ -66,16 +66,22 @@ namespace Data_Access_Layer.Repo.ReservationRepo
             return reservation;
         }
 
+
         public async Task < List<Reservation>> GetReservationsThreeDaysFromNow()
         {
             DateTime targetDate = DateTime.Now.AddDays(3);
             return await context.Reservations.Where(x => x.Date.Date == targetDate.Date).ToListAsync();
         }
 
-        public async Task <List<Reservation>>GetReservationsForFeedback()
+        public async Task<List<Reservation>> GetReservationsForFeedback()
         {
             DateTime yesterday = DateTime.Now.AddDays(-1);
             return await context.Reservations.Where(x => x.Date.Date == yesterday.Date).ToListAsync();
+        }
+        public async Task saveChanges()
+        {
+            await context.SaveChangesAsync();
+
         }
     }
 }

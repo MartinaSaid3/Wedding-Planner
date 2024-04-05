@@ -3,7 +3,11 @@ using Business_Logic_Layer.Dtos.ReservationDtos;
 using Business_Logic_Layer.Service.EmailService;
 using Data_Access_Layer.Models;
 using Data_Access_Layer.Repo.ReservationRepo;
+
 using Hangfire;
+
+using Data_Access_Layer.Repo.VenueRepo;
+
 
 namespace Business_Logic_Layer.Service.ReservationService
 {
@@ -102,6 +106,7 @@ namespace Business_Logic_Layer.Service.ReservationService
             return reservation;
         }
 
+
         // Generate a unique token for the reservation
         public string GenerateUniqueToken()
         {
@@ -121,8 +126,6 @@ namespace Business_Logic_Layer.Service.ReservationService
                 SendEmail("Reminder To You", reservation.Email,
                 " Client", $" , Congratulation, Your Wedding Party Will be After 3 Days From Now", ""));
             }
-
-
         }
 
 
@@ -139,8 +142,37 @@ namespace Business_Logic_Layer.Service.ReservationService
                 $"\n\nPlease take a moment to rate and review our venue by clicking on the link below" +
                 $"\nYour feedback is valuable to us!\n\nBest regards,\nYour Venue Team", "<a href='{ratingReviewUrl}'>Rate and Review</a>"));
             }
+        }
 
 
+        public async Task<bool> AcceptReservation(int id)
+        {
+            var reservation = await ReservationDAL.GetReservation(id);
+            if (reservation == null)
+            {
+                return false; // reservation not found
+            }
+
+            // Update the status of the reservation submission to Accepted
+            reservation.Status = Reservation.ApprovalStatusReservation.Accepted;
+            await ReservationDAL.saveChanges();
+
+            return true; // Venue submission accepted successfully
+        }
+
+        public async Task<bool> RejectReservationSubmission(int id)
+        {
+            var reservation = await ReservationDAL.GetReservation(id);
+            if (reservation == null)
+            {
+                return false;
+            }
+
+            // Update the status of the venue submission to Rejected
+            reservation.Status = Reservation.ApprovalStatusReservation.Rejected;
+            await ReservationDAL.saveChanges();
+
+            return true;
 
         }
     }

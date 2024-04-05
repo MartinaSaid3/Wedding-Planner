@@ -22,6 +22,21 @@ namespace Data_Access_Layer.Models
         public string SpecialRequests { get; set; }
         public string Email { get; set; }
 
+
+        public ApprovalStatusReservation Status { get; set; }
+        public Reservation()
+        {
+            // Initialize status to Pending by default
+            Status = ApprovalStatusReservation.Pending;
+        }
+
+        public enum ApprovalStatusReservation
+        {
+            Pending,
+            Accepted,
+            Rejected
+        }
+
         //navigation property
         public Venue? Venue { get; set; }
 

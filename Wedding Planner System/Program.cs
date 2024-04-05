@@ -1,8 +1,10 @@
 
+using Business_Logic_Layer.Service.AccountServices;
 using Business_Logic_Layer.Service.ReservationService;
 using Business_Logic_Layer.Service.VenueService;
 using Data_Access_Layer.Context;
 using Data_Access_Layer.Models;
+using Data_Access_Layer.Repo.AccountRepo;
 using Data_Access_Layer.Repo.ReservationRepo;
 using Data_Access_Layer.Repo.VenueRepo;
 using Hangfire;
@@ -60,6 +62,8 @@ namespace Wedding_Planner_System
             builder.Services.AddScoped<IReservationDAL, ReservationDAL>();
             builder.Services.AddScoped<IVenueDAL,VenueDAL>();
             builder.Services.AddScoped<IVenueBLL, VenueBLL>();
+            builder.Services.AddScoped<IAccountBLL, AccountBLL>();
+            builder.Services.AddScoped<IAccountDAL, AccountDAL>();
 
             builder.Services.AddHangfire(x => x.UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddHangfireServer();
