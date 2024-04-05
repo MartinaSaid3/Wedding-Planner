@@ -19,5 +19,9 @@ namespace Business_Logic_Layer.Service.ReservationService
         Task<Reservation> GetReservationForEdit(int id);
         Task<bool> ReservationExists(int id);
         Task<Reservation> DeleteReservation(int id);
+
+        string GenerateUniqueToken();
+        Task Back();
+        Task Rate();
     }
 }

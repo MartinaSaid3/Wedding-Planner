@@ -298,3 +298,23 @@ D:\Graduation project new structure\Wedding Planner System\obj\Debug\net8.0\Wedd
 D:\Graduation project new structure\Wedding Planner System\obj\Debug\net8.0\ref\Wedding Planner System.dll
 D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\CloudinaryDotNet.dll
 D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\Hangfire.AspNetCore.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\Hangfire.Core.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\Hangfire.NetCore.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\Hangfire.SqlServer.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\SendGrid.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\StarkbankEcdsa.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\ca\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\de\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\es\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\fa\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\fr\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\nb\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\nl\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\pt-BR\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\pt-PT\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\pt\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\sv\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\tr-TR\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\zh-TW\Hangfire.Core.resources.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\zh\Hangfire.Core.resources.dll

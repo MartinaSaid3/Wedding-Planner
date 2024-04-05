@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Business_Logic_Layer.Dtos.ReservationDtos;
+using Business_Logic_Layer.Service.EmailService;
 using Data_Access_Layer.Models;
 using Data_Access_Layer.Repo.ReservationRepo;
+using Hangfire;
 
 namespace Business_Logic_Layer.Service.ReservationService
 {
@@ -98,6 +100,48 @@ namespace Business_Logic_Layer.Service.ReservationService
                 throw new InvalidOperationException();
             }
             return reservation;
+        }
+
+        // Generate a unique token for the reservation
+        public string GenerateUniqueToken()
+        {
+           
+            return Guid.NewGuid().ToString();
+        }
+
+
+        //function to remind date of event 3 days left
+        public async Task Back()
+        {
+            List<Reservation> reservations = await ReservationDAL.GetReservationsThreeDaysFromNow();
+            foreach (var reservation in reservations)
+            {
+                EmailSender email = new EmailSender();
+                BackgroundJob.Enqueue(() => email.
+                SendEmail("Reminder To You", reservation.Email,
+                " Client", $" , Congratulation, Your Wedding Party Will be After 3 Days From Now", ""));
+            }
+
+
+        }
+
+
+        public async Task Rate()
+        {
+            List<Reservation> reservations = await ReservationDAL.GetReservationsForFeedback();
+            foreach (var reservation in reservations)
+            {
+                EmailSender email = new EmailSender();
+                BackgroundJob.Enqueue(() => email.
+                SendEmail("Feedback", reservation.Email,
+                "Client", $"Dear Client,\n\n" +
+                $"Thank you for choosing our venue. We hope you enjoyed your experience with us." +
+                $"\n\nPlease take a moment to rate and review our venue by clicking on the link below" +
+                $"\nYour feedback is valuable to us!\n\nBest regards,\nYour Venue Team", "<a href='{ratingReviewUrl}'>Rate and Review</a>"));
+            }
+
+
+
         }
     }
 }

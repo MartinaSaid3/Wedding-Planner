@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Business_Logic_Layer.Dtos.ReservationDtos;
 using Data_Access_Layer.Models;
+using Business_Logic_Layer.Service.EmailService;
+using Hangfire;
 
 namespace Wedding_Planner_System.Controllers
 {
@@ -46,7 +48,19 @@ namespace Wedding_Planner_System.Controllers
             //{
             //    return BadRequest("A reservation already exists for the selected date.");
             //}
+
+            // Generate a unique token for the reservation
+            string uniqueToken = ReservationBLL.GenerateUniqueToken();
+
             await ReservationBLL.CreateReservation(reservationDto);
+
+            //background service
+            RecurringJob.AddOrUpdate<ReservationController>("my-recurring-job", x => x.ReservationBLL.Back(), Cron.Hourly(24));
+            EmailSender email = new EmailSender();
+            BackgroundJob.Enqueue(() => email.SendEmail("Successful Reservation", reservationDto.Email, reservationDto.Email, "Congratulation Your Registration Done Successfully", ""));
+            
+            RecurringJob.AddOrUpdate<ReservationController>("my-recurring-job", x => x.ReservationBLL.Rate(), Cron.Hourly(24));
+
             return Ok("A New Reservation Added Successfully!");
 
             //return CreatedAtAction("GetReservation", new { id = reservation.Id }, reservationDto);

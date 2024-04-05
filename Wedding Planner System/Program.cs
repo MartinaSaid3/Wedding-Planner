@@ -5,6 +5,7 @@ using Data_Access_Layer.Context;
 using Data_Access_Layer.Models;
 using Data_Access_Layer.Repo.ReservationRepo;
 using Data_Access_Layer.Repo.VenueRepo;
+using Hangfire;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -60,6 +61,9 @@ namespace Wedding_Planner_System
             builder.Services.AddScoped<IVenueDAL,VenueDAL>();
             builder.Services.AddScoped<IVenueBLL, VenueBLL>();
 
+            builder.Services.AddHangfire(x => x.UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddHangfireServer();
+
             builder.Services.AddControllers();
 
             builder.Services.AddEndpointsApiExplorer();
@@ -114,6 +118,8 @@ namespace Wedding_Planner_System
             // Enable authentication and authorization
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseHangfireDashboard("/dashboard");
 
             app.MapControllers();
 
