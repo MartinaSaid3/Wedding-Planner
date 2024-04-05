@@ -28,3 +28,18 @@ D:\Graduation project new structure\Data Access Layer\obj\Debug\net8.0\refint\Da
 D:\Graduation project new structure\Data Access Layer\obj\Debug\net8.0\Data Access Layer.pdb
 D:\Graduation project new structure\Data Access Layer\obj\Debug\net8.0\Data Access Layer.genruntimeconfig.cache
 D:\Graduation project new structure\Data Access Layer\obj\Debug\net8.0\ref\Data Access Layer.dll
+E:\wedding planner final\Data Access Layer\bin\Debug\net8.0\Data Access Layer.deps.json
+E:\wedding planner final\Data Access Layer\bin\Debug\net8.0\Data Access Layer.runtimeconfig.json
+E:\wedding planner final\Data Access Layer\bin\Debug\net8.0\Data Access Layer.dll
+E:\wedding planner final\Data Access Layer\bin\Debug\net8.0\Data Access Layer.pdb
+E:\wedding planner final\Data Access Layer\obj\Debug\net8.0\Data Access Layer.csproj.AssemblyReference.cache
+E:\wedding planner final\Data Access Layer\obj\Debug\net8.0\Data Access Layer.GeneratedMSBuildEditorConfig.editorconfig
+E:\wedding planner final\Data Access Layer\obj\Debug\net8.0\Data Access Layer.AssemblyInfoInputs.cache
+E:\wedding planner final\Data Access Layer\obj\Debug\net8.0\Data Access Layer.AssemblyInfo.cs
+E:\wedding planner final\Data Access Layer\obj\Debug\net8.0\Data Access Layer.csproj.CoreCompileInputs.cache
+E:\wedding planner final\Data Access Layer\obj\Debug\net8.0\Data Access Layer.sourcelink.json
+E:\wedding planner final\Data Access Layer\obj\Debug\net8.0\Data Access Layer.dll
+E:\wedding planner final\Data Access Layer\obj\Debug\net8.0\refint\Data Access Layer.dll
+E:\wedding planner final\Data Access Layer\obj\Debug\net8.0\Data Access Layer.pdb
+E:\wedding planner final\Data Access Layer\obj\Debug\net8.0\Data Access Layer.genruntimeconfig.cache
+E:\wedding planner final\Data Access Layer\obj\Debug\net8.0\ref\Data Access Layer.dll

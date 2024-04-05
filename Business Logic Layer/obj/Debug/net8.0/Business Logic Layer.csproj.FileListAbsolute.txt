@@ -30,3 +30,19 @@ D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\Busine
 D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\refint\Business Logic Layer.dll
 D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.pdb
 D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\ref\Business Logic Layer.dll
+E:\wedding planner final\Business Logic Layer\bin\Debug\net8.0\Business Logic Layer.deps.json
+E:\wedding planner final\Business Logic Layer\bin\Debug\net8.0\Business Logic Layer.dll
+E:\wedding planner final\Business Logic Layer\bin\Debug\net8.0\Business Logic Layer.pdb
+E:\wedding planner final\Business Logic Layer\bin\Debug\net8.0\Data Access Layer.dll
+E:\wedding planner final\Business Logic Layer\bin\Debug\net8.0\Data Access Layer.pdb
+E:\wedding planner final\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.csproj.AssemblyReference.cache
+E:\wedding planner final\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.GeneratedMSBuildEditorConfig.editorconfig
+E:\wedding planner final\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.AssemblyInfoInputs.cache
+E:\wedding planner final\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.AssemblyInfo.cs
+E:\wedding planner final\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.csproj.CoreCompileInputs.cache
+E:\wedding planner final\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.sourcelink.json
+E:\wedding planner final\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.csproj.CopyComplete
+E:\wedding planner final\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.dll
+E:\wedding planner final\Business Logic Layer\obj\Debug\net8.0\refint\Business Logic Layer.dll
+E:\wedding planner final\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.pdb
+E:\wedding planner final\Business Logic Layer\obj\Debug\net8.0\ref\Business Logic Layer.dll

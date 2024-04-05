@@ -5639,19 +5639,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\Mega Store\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Graduation project new structure\\Business Logic Layer\\Business Logic Layer.csproj",
+      "projectUniqueName": "E:\\wedding planner final\\Business Logic Layer\\Business Logic Layer.csproj",
       "projectName": "Business Logic Layer",
-      "projectPath": "D:\\Graduation project new structure\\Business Logic Layer\\Business Logic Layer.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\Graduation project new structure\\Business Logic Layer\\obj\\",
+      "projectPath": "E:\\wedding planner final\\Business Logic Layer\\Business Logic Layer.csproj",
+      "packagesPath": "C:\\Users\\Mega Store\\.nuget\\packages\\",
+      "outputPath": "E:\\wedding planner final\\Business Logic Layer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mega Store\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5665,8 +5665,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj": {
-              "projectPath": "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj"
+            "E:\\wedding planner final\\Data Access Layer\\Data Access Layer.csproj": {
+              "projectPath": "E:\\wedding planner final\\Data Access Layer\\Data Access Layer.csproj"
             }
           }
         }
@@ -5675,11 +5675,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5707,7 +5702,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.103/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

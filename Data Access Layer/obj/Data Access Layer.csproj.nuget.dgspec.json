@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj": {}
+    "E:\\wedding planner final\\Data Access Layer\\Data Access Layer.csproj": {}
   },
   "projects": {
-    "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj": {
+    "E:\\wedding planner final\\Data Access Layer\\Data Access Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj",
+        "projectUniqueName": "E:\\wedding planner final\\Data Access Layer\\Data Access Layer.csproj",
         "projectName": "Data Access Layer",
-        "projectPath": "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\Graduation project new structure\\Data Access Layer\\obj\\",
+        "projectPath": "E:\\wedding planner final\\Data Access Layer\\Data Access Layer.csproj",
+        "packagesPath": "C:\\Users\\Mega Store\\.nuget\\packages\\",
+        "outputPath": "E:\\wedding planner final\\Data Access Layer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mega Store\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -94,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
