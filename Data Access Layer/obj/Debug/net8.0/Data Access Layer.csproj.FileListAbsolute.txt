@@ -12,3 +12,4 @@ D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug
 D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\Data Access Layer.pdb
 D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\Data Access Layer.genruntimeconfig.cache
 D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\ref\Data Access Layer.dll
+D:\ITI\new\graduation project\Wedding Planner System\Data Access Layer\obj\Debug\net8.0\Data Access Layer.sourcelink.json

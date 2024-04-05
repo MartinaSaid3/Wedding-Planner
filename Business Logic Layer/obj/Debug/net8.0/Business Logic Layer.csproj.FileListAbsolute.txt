@@ -13,3 +13,4 @@ D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\De
 D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\refint\Business Logic Layer.dll
 D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.pdb
 D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\ref\Business Logic Layer.dll
+D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.sourcelink.json

@@ -146,3 +146,4 @@ D:\ITI\new\graduation project\Wedding Planner System\Wedding Planner System\obj\
 D:\ITI\new\graduation project\Wedding Planner System\Wedding Planner System\obj\Debug\net8.0\Wedding Planner System.pdb
 D:\ITI\new\graduation project\Wedding Planner System\Wedding Planner System\obj\Debug\net8.0\Wedding Planner System.genruntimeconfig.cache
 D:\ITI\new\graduation project\Wedding Planner System\Wedding Planner System\obj\Debug\net8.0\ref\Wedding Planner System.dll
+D:\ITI\new\graduation project\Wedding Planner System\Wedding Planner System\obj\Debug\net8.0\Wedding Planner System.sourcelink.json

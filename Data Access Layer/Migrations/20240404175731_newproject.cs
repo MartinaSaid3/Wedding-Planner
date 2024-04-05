@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Wedding_Planner_System.Migrations
+namespace Data_Access_Layer.Migrations
 {
     /// <inheritdoc />
     public partial class newproject : Migration

@@ -22,8 +22,7 @@ namespace Wedding_Planner_System
             //builder.Services.AddDbContext<ApplicationEntity>(options =>
             //    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddDbContext<ApplicationEntity>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-    b => b.MigrationsAssembly("Wedding Planner System")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 

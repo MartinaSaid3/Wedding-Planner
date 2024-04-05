@@ -4,19 +4,16 @@ using Data_Access_Layer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Wedding_Planner_System.Migrations
+namespace Data_Access_Layer.Migrations
 {
     [DbContext(typeof(ApplicationEntity))]
-    [Migration("20240404175731_newproject")]
-    partial class newproject
+    partial class ApplicationEntityModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

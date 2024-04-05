@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Business_Logic_Layer.Dtos.ReservationDtos;
 using Data_Access_Layer.Models;
+using Data_Access_Layer.Repo.ReservationRepo;
 
 namespace Business_Logic_Layer.Service.ReservationService
 {
@@ -37,11 +38,16 @@ namespace Business_Logic_Layer.Service.ReservationService
 
             return reservationDto;
         }
-        public async void CreateReservation(ReservationDto reservationDto)
+        public async Task CreateReservation(ReservationDto reservationDto)
         {
+            // Check if the date is available for reservation
+            if (!await ReservationDAL.IsDateAvailable(reservationDto.Date, reservationDto.VenueId))
+            {
+                throw new InvalidOperationException("The date is not available for reservation.");
+            }
             Reservation reservation = PersonMapper.Map<ReservationDto, Reservation>(reservationDto);
 
-            ReservationDAL.CreateReservation(reservation);
+            await ReservationDAL.CreateReservation(reservation);
         }
         public async Task<bool> IsDateAvailable(DateTime date, int venueId)
         {
@@ -52,16 +58,31 @@ namespace Business_Logic_Layer.Service.ReservationService
         {
             return await ReservationDAL.ReservationExistsForDate(date);
         }
-        public async void PutReservation(int id, ReservationDto reservationDTO)
+        public async Task PutReservation(int id, ReservationDto reservationDTO)
         {
+            // Check if the date is available for reservation
+            if (!await ReservationDAL.IsDateAvailable(reservationDTO.Date, reservationDTO.VenueId))
+            {
+                throw new InvalidOperationException("The date is not available for reservation.");
+            }
 
             Reservation reservation = PersonMapper.Map<ReservationDto, Reservation>(reservationDTO);
-            ReservationDAL.PutReservation(id, reservation);
+            await ReservationDAL.PutReservation(id, reservation);
 
         }
         public async Task<Reservation> GetReservationForEdit(int id)
         {
             var reservation = await ReservationDAL.GetReservation(id);
+            if (id != reservation.Id)
+            {
+                throw new InvalidOperationException();
+            }
+
+            //var reservation = await context.Reservations.FindAsync(id);
+            if (reservation == null)
+            {
+                throw new InvalidOperationException();
+            }
 
             return reservation;
         }
@@ -71,7 +92,12 @@ namespace Business_Logic_Layer.Service.ReservationService
         }
         public async Task<Reservation> DeleteReservation(int id)
         {
-            return await ReservationDAL.DeleteReservation(id);
+            var reservation = await ReservationDAL.DeleteReservation(id);
+            if (reservation == null)
+            {
+                throw new InvalidOperationException();
+            }
+            return reservation;
         }
     }
 }
