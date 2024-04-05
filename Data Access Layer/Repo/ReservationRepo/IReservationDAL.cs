@@ -17,5 +17,6 @@ namespace Data_Access_Layer.Repo.ReservationRepo
         Task PutReservation(int id, Reservation reservation);
         Task<bool> ReservationExists(int id);
         Task<Reservation> DeleteReservation(int id);
+        Task saveChanges();
     }
 }

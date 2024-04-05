@@ -65,5 +65,10 @@ namespace Data_Access_Layer.Repo.ReservationRepo
 
             return reservation;
         }
+
+        public async Task saveChanges()
+        {
+            await context.SaveChangesAsync();
+        }
     }
 }
