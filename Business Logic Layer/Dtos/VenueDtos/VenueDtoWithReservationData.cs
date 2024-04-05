@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -54,5 +55,6 @@ namespace Business_Logic_Layer.Dtos.VenueDtos
         //public List<byte[]> Images { get; set; }
 
         public List<DateTime> ReservationDates { get; set; }
+        public List<IFormFile> ImagesData { get; set; }
     }
 }

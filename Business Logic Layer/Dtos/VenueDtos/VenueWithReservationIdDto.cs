@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,9 +29,11 @@ namespace Business_Logic_Layer.Dtos.VenueDtos
 
 
         public double PriceStartingFrom { get; set; }
-        //public List<byte[]> Images { get; set; }
+     
 
         //reference type hatb2a null lw 3mlt add feha hatdrab exception 
         public List<int> ReservationId { get; set; } = new List<int>();
+
+        public List<IFormFile> ImagesData { get; set; }
     }
 }

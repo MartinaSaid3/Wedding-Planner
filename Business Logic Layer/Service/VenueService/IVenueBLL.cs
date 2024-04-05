@@ -22,6 +22,9 @@ namespace Business_Logic_Layer.Service.VenueService
         Task RemoveVenue(int id);
         Task<double> CalculateTotalPrice(int venueId, string selectedService, int numberOfGuests);
 
+        Task<bool> AcceptVenueSubmissionAsync(int id);
+        Task<bool> RejectVenueSubmission(int id);
+
 
 
     }

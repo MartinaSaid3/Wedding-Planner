@@ -296,3 +296,5 @@ D:\Graduation project new structure\Wedding Planner System\obj\Debug\net8.0\refi
 D:\Graduation project new structure\Wedding Planner System\obj\Debug\net8.0\Wedding Planner System.pdb
 D:\Graduation project new structure\Wedding Planner System\obj\Debug\net8.0\Wedding Planner System.genruntimeconfig.cache
 D:\Graduation project new structure\Wedding Planner System\obj\Debug\net8.0\ref\Wedding Planner System.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\CloudinaryDotNet.dll
+D:\Graduation project new structure\Wedding Planner System\bin\Debug\net8.0\Newtonsoft.Json.dll

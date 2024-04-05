@@ -3,24 +3,33 @@
   "WorkspaceRootPath": "D:\\Graduation project new structure\\Wedding Planner System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|d:\\graduation project new structure\\wedding planner system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Graduation project new structure\\Wedding Planner System\\Migrations\\20240405051428_m3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240405051428_m3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\graduation project new structure\\business logic layer\\service\\venueservice\\venuebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|d:\\graduation project new structure\\wedding planner system\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|d:\\graduation project new structure\\wedding planner system\\migrations\\20240405050957_m2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:migrations\\20240405050957_m2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|d:\\graduation project new structure\\wedding planner system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|D:\\Graduation project new structure\\Wedding Planner System\\controllers\\venuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B39DC78-1A73-4956-A395-735120851468}|Wedding Planner System.csproj|solutionrelative:controllers\\venuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\graduation project new structure\\business logic layer\\dtos\\venuedtos\\venuedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\graduation project new structure\\business logic layer\\business logic layer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\graduation project new structure\\business logic layer\\service\\venueservice\\venuebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\graduation project new structure\\business logic layer\\service\\venueservice\\ivenuebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E754951-D076-4EEA-9081-8A517D34238C}|..\\Business Logic Layer\\Business Logic Layer.csproj|d:\\graduation project new structure\\business logic layer\\business logic layer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,75 +48,106 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Graduation project new structure\\Wedding Planner System\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Graduation project new structure\\Wedding Planner System\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAABJAAAA",
+              "Title": "20240405051428_m3.cs",
+              "DocumentMoniker": "D:\\Graduation project new structure\\Wedding Planner System\\Migrations\\20240405051428_m3.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240405051428_m3.cs",
+              "ToolTip": "D:\\Graduation project new structure\\Wedding Planner System\\Migrations\\20240405051428_m3.cs",
+              "RelativeToolTip": "Migrations\\20240405051428_m3.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T03:56:17.504Z",
+              "WhenOpened": "2024-04-05T05:14:28.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Graduation project new structure\\Wedding Planner System\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\Graduation project new structure\\Wedding Planner System\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-05T05:12:11.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20240405050957_m2.cs",
+              "DocumentMoniker": "D:\\Graduation project new structure\\Wedding Planner System\\Migrations\\20240405050957_m2.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240405050957_m2.cs",
+              "ToolTip": "D:\\Graduation project new structure\\Wedding Planner System\\Migrations\\20240405050957_m2.cs",
+              "RelativeToolTip": "Migrations\\20240405050957_m2.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T05:09:57.993Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "VenueDto.cs",
-              "DocumentMoniker": "D:\\Graduation project new structure\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDto.cs",
-              "RelativeDocumentMoniker": "..\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDto.cs",
-              "ToolTip": "D:\\Graduation project new structure\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDto.cs",
-              "RelativeToolTip": "..\\Business Logic Layer\\Dtos\\VenueDtos\\VenueDto.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAAADQAAAAAAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Graduation project new structure\\Wedding Planner System\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Graduation project new structure\\Wedding Planner System\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T03:41:55.919Z"
+              "WhenOpened": "2024-04-05T05:09:13.565Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Business Logic Layer",
+              "DocumentIndex": 7,
+              "Title": "Business Logic Layer.csproj",
               "DocumentMoniker": "D:\\Graduation project new structure\\Business Logic Layer\\Business Logic Layer.csproj",
               "RelativeDocumentMoniker": "..\\Business Logic Layer\\Business Logic Layer.csproj",
               "ToolTip": "D:\\Graduation project new structure\\Business Logic Layer\\Business Logic Layer.csproj",
               "RelativeToolTip": "..\\Business Logic Layer\\Business Logic Layer.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-05T03:41:49.106Z"
+              "WhenOpened": "2024-04-05T03:41:49.106Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "IVenueBLL.cs",
               "DocumentMoniker": "D:\\Graduation project new structure\\Business Logic Layer\\Service\\VenueService\\IVenueBLL.cs",
               "RelativeDocumentMoniker": "..\\Business Logic Layer\\Service\\VenueService\\IVenueBLL.cs",
               "ToolTip": "D:\\Graduation project new structure\\Business Logic Layer\\Service\\VenueService\\IVenueBLL.cs",
               "RelativeToolTip": "..\\Business Logic Layer\\Service\\VenueService\\IVenueBLL.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAcwBYAAABiAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAcwBkAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T03:19:31.217Z"
+              "WhenOpened": "2024-04-05T03:19:31.217Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "VenueBLL.cs",
               "DocumentMoniker": "D:\\Graduation project new structure\\Business Logic Layer\\Service\\VenueService\\VenueBLL.cs",
               "RelativeDocumentMoniker": "..\\Business Logic Layer\\Service\\VenueService\\VenueBLL.cs",
               "ToolTip": "D:\\Graduation project new structure\\Business Logic Layer\\Service\\VenueService\\VenueBLL.cs",
               "RelativeToolTip": "..\\Business Logic Layer\\Service\\VenueService\\VenueBLL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAN0AAAAAAAAA",
+              "ViewState": "AQIAAHQBAAAAAAAAAAAIwIoBAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T02:57:31.048Z"
+              "WhenOpened": "2024-04-05T02:57:31.048Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "VenuesController.cs",
               "DocumentMoniker": "D:\\Graduation project new structure\\Wedding Planner System\\Controllers\\VenuesController.cs",
               "RelativeDocumentMoniker": "Controllers\\VenuesController.cs",
               "ToolTip": "D:\\Graduation project new structure\\Wedding Planner System\\Controllers\\VenuesController.cs",
               "RelativeToolTip": "Controllers\\VenuesController.cs",
-              "ViewState": "AQIAAJsAAAAAAAAAAAAAAIMAAAAAAAAA",
+              "ViewState": "AQIAAOsAAAAAAAAAAAAAAP0AAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T02:51:48.792Z"
+              "WhenOpened": "2024-04-05T02:51:48.792Z",
+              "EditorCaption": ""
             }
           ]
         }

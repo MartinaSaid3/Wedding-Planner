@@ -76,5 +76,10 @@ namespace Data_Access_Layer.Repo.VenueRepo
             Context.SaveChanges();
 
         }
+
+        public async Task saveChanges()
+        {
+            Context.SaveChanges();
+        }
     }
 }

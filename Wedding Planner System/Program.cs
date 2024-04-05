@@ -95,6 +95,11 @@ namespace Wedding_Planner_System
                 });
             });
 
+            //cloudinary
+            builder.Services.Configure<CloudinarySetting>(builder.Configuration.GetSection("CloudinarySetting"));
+
+            builder.Services.AddScoped<IPhotoServices, PhotoServices>();
+
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())

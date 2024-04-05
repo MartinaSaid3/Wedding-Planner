@@ -4,16 +4,19 @@ using Data_Access_Layer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Data_Access_Layer.Migrations
+namespace Wedding_Planner_System.Migrations
 {
     [DbContext(typeof(ApplicationEntity))]
-    partial class ApplicationEntityModelSnapshot : ModelSnapshot
+    [Migration("20240405051428_m3")]
+    partial class m3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -219,6 +222,9 @@ namespace Data_Access_Layer.Migrations
                     b.Property<string>("SetMenue")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

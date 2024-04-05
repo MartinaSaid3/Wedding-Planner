@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Data_Access_Layer.Migrations
+namespace Wedding_Planner_System.Migrations
 {
     [DbContext(typeof(ApplicationEntity))]
-    [Migration("20240404175731_newproject")]
-    partial class newproject
+    [Migration("20240405050957_m2")]
+    partial class m2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -222,6 +222,9 @@ namespace Data_Access_Layer.Migrations
                     b.Property<string>("SetMenue")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

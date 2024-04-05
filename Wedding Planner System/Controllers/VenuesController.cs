@@ -233,6 +233,38 @@ namespace Wedding_Planner_System.Controllers
             }
         }
 
+        // admin accept request
+        [HttpPut("accept/{id}")]
+        public async Task<IActionResult> AcceptVenueSubmission(int id)
+        {
+            // Call the business logic layer method
+            bool accepted = await venueBLL.AcceptVenueSubmissionAsync(id);
+            if (accepted)
+            {
+                return Ok("Venue submission accepted successfully.");
+            }
+            else
+            {
+                return NotFound(); // Venue not found
+            }
+        }
+
+        //amin reject l request
+        [HttpPut("reject/{id}")]
+        public async Task<IActionResult> RejectVenueSubmission(int id)
+        {
+            // Call the business logic layer method
+            bool rejected = await venueBLL.RejectVenueSubmission(id);
+            if (rejected)
+            {
+                return Ok("Venue submission rejected successfully.");
+            }
+            else
+            {
+                return NotFound(); // Venue not found
+            }
+        }
+
 
     }
 }

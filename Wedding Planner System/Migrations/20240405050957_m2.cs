@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Data_Access_Layer.Migrations
+namespace Wedding_Planner_System.Migrations
 {
     /// <inheritdoc />
-    public partial class newproject : Migration
+    public partial class m2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -72,7 +72,8 @@ namespace Data_Access_Layer.Migrations
                     PriceSetMenuePerPerson = table.Column<double>(type: "float", nullable: false),
                     PriceHighTeaPerPerson = table.Column<double>(type: "float", nullable: false),
                     MinPrice = table.Column<double>(type: "float", nullable: false),
-                    ImagesData = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ImagesData = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

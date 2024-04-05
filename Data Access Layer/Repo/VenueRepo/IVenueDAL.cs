@@ -17,5 +17,6 @@ namespace Data_Access_Layer.Repo.VenueRepo
         Task SaveVenue(Venue venue);
         Task UpdateVenueAsync(Venue venue);
         Task RemoveVenue(Venue venue);
+        Task saveChanges();
     }
 }

@@ -14,10 +14,12 @@ namespace Business_Logic_Layer.Service.VenueService
     public class VenueBLL : IVenueBLL
     {
         private readonly IVenueDAL venueDAL;
+        private readonly IPhotoServices photoservices;
 
-        public VenueBLL(IVenueDAL _VenueDAL)
+        public VenueBLL(IVenueDAL _VenueDAL,IPhotoServices _photoservices)
         {
             venueDAL = _VenueDAL;
+            photoservices = _photoservices;
         }
         public async Task<List<VenueWithReservationIdDto>> GetAllVenue()
         {
@@ -222,25 +224,18 @@ namespace Business_Logic_Layer.Service.VenueService
 
         public async Task SaveVenue(VenueDto VenueDto)
         {
-            if (VenueDto == null)
+
+            List<string> imagesUrl = new List<string>();
+
+            foreach (var x in VenueDto.ImagesData)
             {
-                throw new ArgumentNullException(nameof(VenueDto), "Venue DTO is null.");
+
+                var photo = await photoservices.AddPlaceAsync(x);
+                imagesUrl.Add(photo.SecureUrl.AbsoluteUri);
             }
 
-            if (string.IsNullOrEmpty(VenueDto.Name))
-            {
-                throw new ArgumentException("Venue name is required.", nameof(VenueDto.Name));
-            }
 
-            if (VenueDto.ImagesData == null || VenueDto.ImagesData.Count == 0)
-            {
-                throw new ArgumentException("No images provided.", nameof(VenueDto.ImagesData));
-            }
-            // Convert images to byte array
-            List<byte[]> imageDataList = await ConvertImagesToByteArray(VenueDto.ImagesData);
-
-            // Create Venue object
-            Venue venue = new Venue
+            var venue = new Venue
             {
                 Name = VenueDto.Name,
                 Description = VenueDto.Description,
@@ -253,14 +248,18 @@ namespace Business_Logic_Layer.Service.VenueService
                 PriceHighTeaPerPerson = VenueDto.PriceHighTeaPerPerson,
                 MinCapacity = VenueDto.MinCapacity,
                 MaxCapacity = VenueDto.MaxCapacity,
-                ImagesData = imageDataList // Assign the converted image data
+                //conert image to url
+                ImagesData = imagesUrl,
             };
-            // Save the venue to the database
+
+            // save the venue to the database
+
             await venueDAL.SaveVenue(venue);
-
-
+            
 
         }
+
+
 
         public async Task<List<byte[]>> ConvertImagesToByteArray(List<IFormFile> imageFiles)
         {
@@ -371,7 +370,37 @@ namespace Business_Logic_Layer.Service.VenueService
 
             return totalPrice;
         }
-         
+
+        public async Task<bool> AcceptVenueSubmissionAsync(int id)
+        {
+            var venue = await venueDAL.GetVenueById(id);
+            if (venue == null)
+            {
+                return false; // Venue not found
+            }
+
+            // Update the status of the venue submission to Accepted
+            venue.Status = Venue.ApprovalStatus.Accepted;
+            await venueDAL.saveChanges();
+
+            return true; // Venue submission accepted successfully
+        }
+
+        public async Task<bool> RejectVenueSubmission(int id)
+        {
+            var venue = await venueDAL.GetVenueById(id);
+            if (venue == null)
+            {
+                return false;
+            }
+
+            // Update the status of the venue submission to Rejected
+            venue.Status = Venue.ApprovalStatus.Rejected;
+            await venueDAL.saveChanges();
+
+            return true;
+        }
+
 
 
     }
