@@ -321,7 +321,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Business_Logic_Layer.Dtos.VenueDtos.VenueWithReservationIdDto",
+        "Type": "Business_Logic_Layer.Dtos.VenueDtos.VenueDtoWithReservationData",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -461,6 +461,22 @@
   },
   {
     "ContainingType": "Wedding_Planner_System.Controllers.VenuesController",
+    "Method": "AcceptVenueSubmission",
+    "RelativePath": "api/Venues/accept/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Wedding_Planner_System.Controllers.VenuesController",
     "Method": "GetVenueByName",
     "RelativePath": "api/Venues/Name/{Name}",
     "HttpMethod": "GET",
@@ -510,6 +526,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Wedding_Planner_System.Controllers.VenuesController",
+    "Method": "RejectVenueSubmission",
+    "RelativePath": "api/Venues/reject/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Wedding_Planner_System.Controllers.WeatherForecastController",

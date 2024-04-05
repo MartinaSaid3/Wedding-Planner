@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Business Logic Layer\Business Logic Layer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

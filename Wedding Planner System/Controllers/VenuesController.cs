@@ -41,11 +41,11 @@ namespace Wedding_Planner_System.Controllers
         // hai3red el reesrvations id m3ah
         [HttpGet]
         [Route("{id:int}", Name = "GetOneVenueRoute")]
-        public async Task<ActionResult<VenueWithReservationIdDto>> GetVenueById(int id)
+        public async Task<ActionResult<VenueDtoWithReservationData>> GetVenueById(int id)
         {
             try
             {
-                VenueWithReservationIdDto venueDto = await venueBLL.GetVenueById(id);
+                VenueDtoWithReservationData venueDto = await venueBLL.GetVenueById(id);
                 return Ok(venueDto);
             }
             catch (ArgumentException ex)

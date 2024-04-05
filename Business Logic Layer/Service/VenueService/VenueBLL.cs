@@ -34,6 +34,7 @@ namespace Business_Logic_Layer.Service.VenueService
 
                     VenueWithReservationIdDto venueDto = new VenueWithReservationIdDto
                     {
+                        Id=item.Id,
                         Name = item.Name,
                         Description = item.Description,
                         Location = item.Location,
@@ -56,7 +57,7 @@ namespace Business_Logic_Layer.Service.VenueService
         }
 
 
-        public async Task<VenueWithReservationIdDto> GetVenueById(int id)
+        public async Task<VenueDtoWithReservationData> GetVenueById(int id)
         {
             if (id <= 0)
             {
@@ -70,8 +71,9 @@ namespace Business_Logic_Layer.Service.VenueService
                 throw new Exception("This Venue Does Not Exist");
             }
 
-            VenueWithReservationIdDto venueDto = new VenueWithReservationIdDto
+            VenueDtoWithReservationData venueDto = new VenueDtoWithReservationData
             {
+                Id=v1.Id,
                 Name = v1.Name,
                 Description = v1.Description,
                 Location = v1.Location,
@@ -80,13 +82,9 @@ namespace Business_Logic_Layer.Service.VenueService
                 HighTea = v1.HighTea,
                 PriceStartingFrom = v1.MinPrice,
                 MinCapacity = v1.MinCapacity,
-                MaxCapacity = v1.MaxCapacity
+                MaxCapacity = v1.MaxCapacity,
+                ReservationDates = v1.Reservations.Select(r => r.Date).ToList()
             };
-
-            foreach (var item in v1.Reservations)
-            {
-                venueDto.ReservationId.Add(item.Id);
-            }
 
             return venueDto;
 
@@ -112,6 +110,7 @@ namespace Business_Logic_Layer.Service.VenueService
             {
                 VenueDtoWithReservationData venueDto = new VenueDtoWithReservationData
                 {
+                    Id=item.Id,
                     Name = item.Name,
                     Description = item.Description,
                     Location = item.Location,
@@ -149,7 +148,8 @@ namespace Business_Logic_Layer.Service.VenueService
             foreach (var item in VenueList)
             {
                 VenueDtoWithReservationData VenueDto = new VenueDtoWithReservationData
-                {
+                {   
+                    Id = item.Id,
                     Name = item.Name,
                     Description = item.Description,
                     Location = item.Location,
@@ -196,6 +196,8 @@ namespace Business_Logic_Layer.Service.VenueService
             {
                 VenueDtoWithReservationData VenueDto = new VenueDtoWithReservationData
                 {
+
+                    Id=item.Id,
                     Name = item.Name,
                     Description = item.Description,
                     Location = item.Location,
