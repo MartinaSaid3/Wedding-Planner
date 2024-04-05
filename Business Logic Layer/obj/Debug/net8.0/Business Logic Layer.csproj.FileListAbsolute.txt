@@ -14,3 +14,19 @@ D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\De
 D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.pdb
 D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\ref\Business Logic Layer.dll
 D:\ITI\new\graduation project\Wedding Planner System\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.sourcelink.json
+D:\Graduation project new structure\Business Logic Layer\bin\Debug\net8.0\Business Logic Layer.deps.json
+D:\Graduation project new structure\Business Logic Layer\bin\Debug\net8.0\Business Logic Layer.dll
+D:\Graduation project new structure\Business Logic Layer\bin\Debug\net8.0\Business Logic Layer.pdb
+D:\Graduation project new structure\Business Logic Layer\bin\Debug\net8.0\Data Access Layer.dll
+D:\Graduation project new structure\Business Logic Layer\bin\Debug\net8.0\Data Access Layer.pdb
+D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.csproj.AssemblyReference.cache
+D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.AssemblyInfoInputs.cache
+D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.AssemblyInfo.cs
+D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.csproj.CoreCompileInputs.cache
+D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.sourcelink.json
+D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\Business.6AB683E1.Up2Date
+D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.dll
+D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\refint\Business Logic Layer.dll
+D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\Business Logic Layer.pdb
+D:\Graduation project new structure\Business Logic Layer\obj\Debug\net8.0\ref\Business Logic Layer.dll

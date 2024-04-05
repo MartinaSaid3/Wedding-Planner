@@ -52,7 +52,5 @@ namespace Business_Logic_Layer.Dtos.VenueDtos
         public List<IFormFile> ImagesData { get; set; }
 
 
-        public virtual List<int> Reservations { get; set; } = new List<int>();
-
     }
 }

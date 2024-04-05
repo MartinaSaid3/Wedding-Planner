@@ -1,8 +1,10 @@
 
 using Business_Logic_Layer.Service.ReservationService;
+using Business_Logic_Layer.Service.VenueService;
 using Data_Access_Layer.Context;
 using Data_Access_Layer.Models;
 using Data_Access_Layer.Repo.ReservationRepo;
+using Data_Access_Layer.Repo.VenueRepo;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +24,7 @@ namespace Wedding_Planner_System
             //builder.Services.AddDbContext<ApplicationEntity>(options =>
             //    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddDbContext<ApplicationEntity>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Wedding Planner System")));
 
 
 
@@ -55,6 +57,8 @@ namespace Wedding_Planner_System
             builder.Services.AddScoped<UserManager<ApplicationUser>>();
             builder.Services.AddScoped<IReservationBLL, ReservationBLL>();
             builder.Services.AddScoped<IReservationDAL, ReservationDAL>();
+            builder.Services.AddScoped<IVenueDAL,VenueDAL>();
+            builder.Services.AddScoped<IVenueBLL, VenueBLL>();
 
             builder.Services.AddControllers();
 

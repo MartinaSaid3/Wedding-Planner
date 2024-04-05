@@ -3,7 +3,7 @@
     "ContainingType": "Wedding_Planner_System.Controllers.VenuesController",
     "Method": "CalculateTotalPrice",
     "RelativePath": "{venueId}/{selectedService}/{numberOfGuests}",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -216,13 +216,23 @@
   },
   {
     "ContainingType": "Wedding_Planner_System.Controllers.VenuesController",
-    "Method": "GetAllVenue",
+    "Method": "GetAllVenues",
     "RelativePath": "api/Venues",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Business_Logic_Layer.Dtos.VenueDtos.VenueWithReservationIdDto, Business Logic Layer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Wedding_Planner_System.Controllers.VenuesController",
@@ -291,11 +301,6 @@
         "Name": "ImagesData",
         "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
         "IsRequired": false
-      },
-      {
-        "Name": "Reservations",
-        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -314,7 +319,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Business_Logic_Layer.Dtos.VenueDtos.VenueWithReservationIdDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Wedding_Planner_System.Controllers.VenuesController",
@@ -330,12 +345,77 @@
         "IsRequired": true
       },
       {
-        "Name": "VenueDto",
-        "Type": "Business_Logic_Layer.Dtos.VenueDtos.VenueDto",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Location",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OpenBuffet",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SetMenue",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "HighTea",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "MaxCapacity",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "MinCapacity",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "PriceOpenBuffetPerPerson",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "PriceSetMenuePerPerson",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "PriceHighTeaPerPerson",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImagesData",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Data_Access_Layer.Models.Venue",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Wedding_Planner_System.Controllers.VenuesController",
@@ -367,7 +447,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Business_Logic_Layer.Dtos.VenueDtos.VenueDtoWithReservationData",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Wedding_Planner_System.Controllers.VenuesController",
@@ -383,7 +473,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Business_Logic_Layer.Dtos.VenueDtos.VenueDtoWithReservationData",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Wedding_Planner_System.Controllers.VenuesController",
@@ -399,7 +499,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Business_Logic_Layer.Dtos.VenueDtos.VenueDtoWithReservationData",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Wedding_Planner_System.Controllers.WeatherForecastController",

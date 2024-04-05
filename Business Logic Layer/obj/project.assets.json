@@ -2693,19 +2693,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Monica\\.nuget\\packages\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Business Logic Layer.csproj",
+      "projectUniqueName": "D:\\Graduation project new structure\\Business Logic Layer\\Business Logic Layer.csproj",
       "projectName": "Business Logic Layer",
-      "projectPath": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\Business Logic Layer.csproj",
-      "packagesPath": "C:\\Users\\Monica\\.nuget\\packages\\",
-      "outputPath": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Business Logic Layer\\obj\\",
+      "projectPath": "D:\\Graduation project new structure\\Business Logic Layer\\Business Logic Layer.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "D:\\Graduation project new structure\\Business Logic Layer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Monica\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2719,8 +2719,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Data Access Layer.csproj": {
-              "projectPath": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Data Access Layer.csproj"
+            "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj": {
+              "projectPath": "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj"
             }
           }
         }

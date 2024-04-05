@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Data Access Layer.csproj": {}
+    "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj": {}
   },
   "projects": {
-    "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Data Access Layer.csproj": {
+    "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Data Access Layer.csproj",
+        "projectUniqueName": "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj",
         "projectName": "Data Access Layer",
-        "projectPath": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\Data Access Layer.csproj",
-        "packagesPath": "C:\\Users\\Monica\\.nuget\\packages\\",
-        "outputPath": "D:\\ITI\\new\\graduation project\\Wedding Planner System\\Data Access Layer\\obj\\",
+        "projectPath": "D:\\Graduation project new structure\\Data Access Layer\\Data Access Layer.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\Graduation project new structure\\Data Access Layer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Monica\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
