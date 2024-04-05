@@ -56,16 +56,16 @@ namespace Wedding_Planner_System.Controllers
             //}
 
             // Generate a unique token for the reservation
-            string uniqueToken = ReservationBLL.GenerateUniqueToken();
+            //string uniqueToken = ReservationBLL.GenerateUniqueToken();
 
             await ReservationBLL.CreateReservation(reservationDto);
 
             //background service
-            RecurringJob.AddOrUpdate<ReservationController>("my-recurring-job", x => x.ReservationBLL.Back(), Cron.Hourly(24));
+            RecurringJob.AddOrUpdate("back-recurring-job", () => ReservationBLL.Back(), Cron.Hourly(24));
             EmailSender email = new EmailSender();
             BackgroundJob.Enqueue(() => email.SendEmail("Successful Reservation", reservationDto.Email, reservationDto.Email, "Congratulation Your Registration Done Successfully", ""));
             
-            RecurringJob.AddOrUpdate<ReservationController>("my-recurring-job", x => x.ReservationBLL.Rate(), Cron.Hourly(24));
+            RecurringJob.AddOrUpdate("Rate-recurring-job", ()=> ReservationBLL.Rate(), Cron.Hourly(24));
 
             return Ok("A New Reservation Added Successfully!");
 

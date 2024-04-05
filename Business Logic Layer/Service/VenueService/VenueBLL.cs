@@ -44,6 +44,7 @@ namespace Business_Logic_Layer.Service.VenueService
                         MaxCapacity = item.MaxCapacity,
                         MinCapacity = item.MinCapacity,
                         PriceStartingFrom = item.MinPrice,
+                        //ImagesData=item.ImagesData
 
                     };
 
@@ -83,6 +84,7 @@ namespace Business_Logic_Layer.Service.VenueService
                 PriceStartingFrom = v1.MinPrice,
                 MinCapacity = v1.MinCapacity,
                 MaxCapacity = v1.MaxCapacity,
+                //ImagesData=v1.ImagesData,
                 ReservationDates = v1.Reservations.Select(r => r.Date).ToList()
             };
 
@@ -120,6 +122,7 @@ namespace Business_Logic_Layer.Service.VenueService
                     MaxCapacity = item.MaxCapacity,
                     MinCapacity = item.MinCapacity,
                     PriceStartingFrom = item.MinPrice,
+                    //ImagesData=item.ImagesData,
                     ReservationDates = item.Reservations.Select(r => r.Date).ToList()
                 };
 
@@ -159,6 +162,7 @@ namespace Business_Logic_Layer.Service.VenueService
                     MaxCapacity = item.MaxCapacity,
                     MinCapacity = item.MinCapacity,
                     PriceStartingFrom = item.MinPrice,
+                    //ImagesData=item.ImagesData,
                     ReservationDates = new List<DateTime>() // Initialize the list
                 };
 
@@ -207,6 +211,7 @@ namespace Business_Logic_Layer.Service.VenueService
                     MaxCapacity = item.MaxCapacity,
                     MinCapacity = item.MinCapacity,
                     PriceStartingFrom = item.MinPrice,
+                    //ImagesData=item.ImagesData,
 
                     ReservationDates = new List<DateTime>() // Initialize the list
                 };
@@ -310,6 +315,7 @@ namespace Business_Logic_Layer.Service.VenueService
             oldVenue.PriceHighTeaPerPerson = venueDto.PriceHighTeaPerPerson;
             oldVenue.MaxCapacity = venueDto.MaxCapacity;
             oldVenue.MinCapacity = venueDto.MinCapacity;
+            //oldVenue.ImagesData = venueDto.ImagesData;
 
             // Update the venue in the database
             await venueDAL.UpdateVenueAsync(oldVenue);

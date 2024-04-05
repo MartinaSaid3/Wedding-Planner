@@ -40,7 +40,7 @@ namespace Data_Access_Layer.Models
         //navigation property
         public Venue? Venue { get; set; }
 
-        public string UniqueToken { get; set; } // Property for the unique token
+        //public string UniqueToken { get; set; } // Property for the unique token
 
     }
 }
