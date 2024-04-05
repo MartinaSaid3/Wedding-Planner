@@ -20,7 +20,7 @@ namespace Wedding_Planner_System.Controllers
     {
 
         private Business_Logic_Layer.Service.AccountServices.IAccountBLL _accountBLL;
-       
+
 
         public AccountController(Business_Logic_Layer.Service.AccountServices.IAccountBLL accountBLL)
         {
@@ -35,7 +35,7 @@ namespace Wedding_Planner_System.Controllers
             if (ModelState.IsValid)
             {
 
-               var result= await _accountBLL.Registration(UserDto);
+                var result = await _accountBLL.Registration(UserDto);
                 if (result.Success)
                 {
                     return Ok(new { message = "success", user = result.Data });
@@ -52,28 +52,34 @@ namespace Wedding_Planner_System.Controllers
 
             if (result.Success)
             {
-                
+
                 return Ok(result.Data);
             }
             return Unauthorized(result.Message);
         }
 
-        //[HttpPost("ForgetPassword")]
-        //  public async Task<IActionResult> ForgetPassword(ForgetPasswordDto model)
-        //    {
-        //    var user = await userManager.FindByEmailAsync(model.Email);
-        //    if (user == null)
-        //    {
-        //        // Don't reveal that the user does not exist or is not confirmed
-        //        return Ok("If your email is registered, you will receive instructions to reset your password.");
-        //    }
+        [HttpPost("ForgetPassword")]
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordDto model)
+        {
+            var result = await _accountBLL.ForgetPasswordAsync(model);
+            if (result.Success)
+            {
+                return NoContent();
+            }
+            return BadRequest();
+            //var user = await userManager.FindByEmailAsync(model.Email);
+            //if (user == null)
+            //{
+            //    // Don't reveal that the user does not exist or is not confirmed
+            //    return Ok("If your email is registered, you will receive instructions to reset your password.");
+            //}
 
-        //    var token = await userManager.GeneratePasswordResetTokenAsync(user);
-        //    var resetLink = Url.Action("ResetPassword", "Account", new { email = model.Email, token = token }, Request.Scheme);
-           
-        //    return Ok("If your email is registered, you will receive instructions to reset your password.");
-        //}
- 
+            //var token = await userManager.GeneratePasswordResetTokenAsync(user);
+            //var resetLink = Url.Action("ResetPassword", "Account", new { email = model.Email, token = token }, Request.Scheme);
+
+            //return Ok("If your email is registered, you will receive instructions to reset your password.");
+        }
+
 
         [HttpPost("ResetPassword")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDto model)
