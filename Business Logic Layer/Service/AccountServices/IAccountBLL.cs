@@ -13,7 +13,7 @@ namespace Business_Logic_Layer.Service.AccountServices
         Task<ServicesResult<ApplicationUser>> Registration(RegisterUserDto UserDto);
         Task<ServicesResult<string>> LoginAsync(LoginUserDto userDto);
 
-        Task<ServicesResult<ApplicationUser>> ForgetPassword(ForgetPasswordDto model);
+        Task<ServicesResult<ApplicationUser>> ForgetPasswordAsync(ForgetPasswordDto model);
 
         Task<ServicesResult<ApplicationUser>> ResetPassword(ResetPasswordDto model);
     }

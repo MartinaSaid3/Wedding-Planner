@@ -3,6 +3,7 @@ using Business_Logic_Layer.Dtos.AccountDtos;
 using CloudinaryDotNet;
 using Data_Access_Layer.Models;
 using Data_Access_Layer.Repo.AccountRepo;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -17,37 +18,45 @@ using System.Threading.Tasks;
 
 namespace Business_Logic_Layer.Service.AccountServices
 {
-    public class AccountBLL :IAccountBLL
+    public class AccountBLL : IAccountBLL
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IConfiguration Config;
+        private readonly IUrlHelper _urlHelper;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private Data_Access_Layer.Repo.AccountRepo.IAccountDAL accountDAL;
-        public AccountBLL(UserManager<ApplicationUser> UserManger, IConfiguration Config , IAccountDAL _accountDAL)
+        public AccountBLL(UserManager<ApplicationUser> UserManger,
+            IConfiguration Config,
+            IUrlHelper urlHelper,
+            IHttpContextAccessor httpContextAccessor,
+            IAccountDAL _accountDAL)
         {
             this.userManager = UserManger;
             this.Config = Config;
+            _urlHelper = urlHelper;
+            _httpContextAccessor = httpContextAccessor;
             accountDAL = _accountDAL;
         }
 
         public async Task<ServicesResult<ApplicationUser>> Registration(RegisterUserDto UserDto)
         {
-           
-                //save 
-                ApplicationUser user = new ApplicationUser();
-                user.UserName = UserDto.UserName;
-                user.Email = UserDto.Email;
-                user.PhoneNumber = UserDto.Phone;
-                user.Role = UserDto.Role;
-                user.Gender = UserDto.Gender;
-                user.UserLocation = UserDto.Address;
-                user.SSN = UserDto.SSN;
 
-                //IdentityResult result = await userManager.CreateAsync(user, UserDto.Password);
+            //save 
+            ApplicationUser user = new ApplicationUser();
+            user.UserName = UserDto.UserName;
+            user.Email = UserDto.Email;
+            user.PhoneNumber = UserDto.Phone;
+            user.Role = UserDto.Role;
+            user.Gender = UserDto.Gender;
+            user.UserLocation = UserDto.Address;
+            user.SSN = UserDto.SSN;
 
-             var result = await userManager.CreateAsync(user, UserDto.Password);
-             if (result.Succeeded)
+            //IdentityResult result = await userManager.CreateAsync(user, UserDto.Password);
+
+            var result = await userManager.CreateAsync(user, UserDto.Password);
+            if (result.Succeeded)
             {
-                return ServicesResult<ApplicationUser>.Successed(user ,"success");
+                return ServicesResult<ApplicationUser>.Successed(user, "success");
             }
 
             return ServicesResult<ApplicationUser>.Failure(result.Errors.FirstOrDefault()?.Description ?? "Failed to create user.");
@@ -99,7 +108,7 @@ namespace Business_Logic_Layer.Service.AccountServices
             return tokenString;
         }
 
-        public async Task<ServicesResult<ApplicationUser>> ForgetPassword(ForgetPasswordDto model)
+        public async Task<ServicesResult<ApplicationUser>> ForgetPasswordAsync(ForgetPasswordDto model)
         {
             var user = await userManager.FindByEmailAsync(model.Email);
             if (user == null)
@@ -109,11 +118,15 @@ namespace Business_Logic_Layer.Service.AccountServices
             }
 
             var token = await userManager.GeneratePasswordResetTokenAsync(user);
+            var resetLink = _urlHelper.Action("ResetPassword",
+                "Account",
+                new { email = model.Email, token = token },
+                _httpContextAccessor.HttpContext?.Request.Scheme);
 
             //var emailService = new EmailService("smtp.gmail.com", 587, "your_email@gmail.com", "your_gmail_password");
             //await emailService.SendEmailAsync(user.Email, "Password Reset", "Please click the following link to reset your password: " + resetLink);
 
-            return ServicesResult<ApplicationUser>.Successed(default,"If your email is registered, you will receive instructions to reset your password");
+            return ServicesResult<ApplicationUser>.Successed(default!, "If your email is registered, you will receive instructions to reset your password");
         }
 
         public async Task<ServicesResult<ApplicationUser>> ResetPassword(ResetPasswordDto model)
@@ -122,14 +135,14 @@ namespace Business_Logic_Layer.Service.AccountServices
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-               
+
                 throw new InvalidOperationException("Invalid Email.");
             }
 
             var result = await userManager.ResetPasswordAsync(user, model.Token, model.Password);
             if (result.Succeeded)
             {
-                return ServicesResult<ApplicationUser>.Successed(default,"Password reset successful.");
+                return ServicesResult<ApplicationUser>.Successed(default, "Password reset successful.");
             }
 
             throw new InvalidOperationException("Invalid token or password reset failed.");
