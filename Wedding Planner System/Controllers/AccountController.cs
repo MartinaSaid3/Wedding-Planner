@@ -20,7 +20,7 @@ namespace Wedding_Planner_System.Controllers
     {
 
         private Business_Logic_Layer.Service.AccountServices.IAccountBLL _accountBLL;
-        private 
+       
 
         public AccountController(Business_Logic_Layer.Service.AccountServices.IAccountBLL accountBLL)
         {
@@ -58,21 +58,21 @@ namespace Wedding_Planner_System.Controllers
             return Unauthorized(result.Message);
         }
 
-        [HttpPost("ForgetPassword")]
-          public async Task<IActionResult> ForgetPassword(ForgetPasswordDto model)
-            {
-            var user = await userManager.FindByEmailAsync(model.Email);
-            if (user == null)
-            {
-                // Don't reveal that the user does not exist or is not confirmed
-                return Ok("If your email is registered, you will receive instructions to reset your password.");
-            }
+        //[HttpPost("ForgetPassword")]
+        //  public async Task<IActionResult> ForgetPassword(ForgetPasswordDto model)
+        //    {
+        //    var user = await userManager.FindByEmailAsync(model.Email);
+        //    if (user == null)
+        //    {
+        //        // Don't reveal that the user does not exist or is not confirmed
+        //        return Ok("If your email is registered, you will receive instructions to reset your password.");
+        //    }
 
-            var token = await userManager.GeneratePasswordResetTokenAsync(user);
-            var resetLink = Url.Action("ResetPassword", "Account", new { email = model.Email, token = token }, Request.Scheme);
-            IEmailSender
-            return Ok("If your email is registered, you will receive instructions to reset your password.");
-        }
+        //    var token = await userManager.GeneratePasswordResetTokenAsync(user);
+        //    var resetLink = Url.Action("ResetPassword", "Account", new { email = model.Email, token = token }, Request.Scheme);
+           
+        //    return Ok("If your email is registered, you will receive instructions to reset your password.");
+        //}
  
 
         [HttpPost("ResetPassword")]

@@ -10,6 +10,8 @@ namespace Business_Logic_Layer.Dtos.VenueDtos
 {
     public class VenueDtoWithReservationData
     {
+        public int Id { get; set; }
+
         [Required]
         [StringLength(15, MinimumLength = 3)]
         public string Name { get; set; }

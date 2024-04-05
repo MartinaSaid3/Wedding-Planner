@@ -12,7 +12,7 @@ namespace Business_Logic_Layer.Service.VenueService
     public interface IVenueBLL
     {
         Task<List<VenueWithReservationIdDto>> GetAllVenue();
-        Task<VenueWithReservationIdDto> GetVenueById(int id);
+        Task<VenueDtoWithReservationData> GetVenueById(int id);
         Task<List<VenueDtoWithReservationData>> GetVenueByName(string name);
         Task<List<VenueDtoWithReservationData>> GetVenueByPrice(double price);
         Task<List<VenueDtoWithReservationData>> GetVenueByLocation(string Location);
