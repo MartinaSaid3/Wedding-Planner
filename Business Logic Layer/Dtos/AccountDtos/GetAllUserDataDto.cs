@@ -8,6 +8,7 @@ namespace Business_Logic_Layer.Dtos.AccountDtos
 {
     public class GetAllUserDataDto
     {
+        public string UserId { get; set; }
         // public string FullName { get; set; }
         public string Role { get; set; }
         public string Gender { get; set; }

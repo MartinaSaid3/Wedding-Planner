@@ -18,6 +18,8 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Business_Logic_Layer.Service.EmailService;
+using Business_Logic_Layer.Service.AdminServices;
+using Data_Access_Layer.Repo.AdminRepo;
 
 namespace Wedding_Planner_System
 {
@@ -69,6 +71,8 @@ namespace Wedding_Planner_System
             builder.Services.AddScoped<IAccountBLL, AccountBLL>();
             builder.Services.AddScoped<IAccountDAL, AccountDAL>();
             builder.Services.AddScoped<IEmailSender, EmailSender>();
+            builder.Services.AddScoped<IAdminBLL, AdminBLL>();
+            builder.Services.AddScoped<IAdminDAL, AdminDAL>();
 
             builder.Services.AddHangfire(x => x.UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddHangfireServer();
