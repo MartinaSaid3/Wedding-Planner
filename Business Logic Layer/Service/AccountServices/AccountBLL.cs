@@ -94,6 +94,7 @@ namespace Business_Logic_Layer.Service.AccountServices
         {
             new Claim(ClaimTypes.Name, user.UserName),
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim(ClaimTypes.Role, user.Role.ToString()),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
@@ -160,12 +161,12 @@ namespace Business_Logic_Layer.Service.AccountServices
 
         public async Task<ServicesResult<ApplicationUser>> ResetPassword(ResetPasswordDto model)
         {
-            var user = await userManager.FindByEmailAsync(model.Email);
+            var user = await userManager.FindByNameAsync(model.UserName);
             if (user == null)
             {
                 // Don't reveal that the user does not exist
 
-                throw new InvalidOperationException("Invalid Email.");
+                throw new InvalidOperationException("Invalid Account.");
             }
 
             var result = await userManager.ResetPasswordAsync(user, model.Token, model.Password);
