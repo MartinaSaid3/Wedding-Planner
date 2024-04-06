@@ -44,7 +44,7 @@ namespace Business_Logic_Layer.Service.VenueService
                         MaxCapacity = item.MaxCapacity,
                         MinCapacity = item.MinCapacity,
                         PriceStartingFrom = item.MinPrice,
-                        //ImagesData=item.ImagesData
+                        ImagesData=item.ImagesData
 
                     };
 
@@ -84,7 +84,7 @@ namespace Business_Logic_Layer.Service.VenueService
                 PriceStartingFrom = v1.MinPrice,
                 MinCapacity = v1.MinCapacity,
                 MaxCapacity = v1.MaxCapacity,
-                //ImagesData=v1.ImagesData,
+                ImagesData=v1.ImagesData,
                 ReservationDates = v1.Reservations.Select(r => r.Date).ToList()
             };
 
@@ -122,7 +122,7 @@ namespace Business_Logic_Layer.Service.VenueService
                     MaxCapacity = item.MaxCapacity,
                     MinCapacity = item.MinCapacity,
                     PriceStartingFrom = item.MinPrice,
-                    //ImagesData=item.ImagesData,
+                    ImagesData=item.ImagesData,
                     ReservationDates = item.Reservations.Select(r => r.Date).ToList()
                 };
 
@@ -162,7 +162,7 @@ namespace Business_Logic_Layer.Service.VenueService
                     MaxCapacity = item.MaxCapacity,
                     MinCapacity = item.MinCapacity,
                     PriceStartingFrom = item.MinPrice,
-                    //ImagesData=item.ImagesData,
+                    ImagesData=item.ImagesData,
                     ReservationDates = new List<DateTime>() // Initialize the list
                 };
 
@@ -211,7 +211,7 @@ namespace Business_Logic_Layer.Service.VenueService
                     MaxCapacity = item.MaxCapacity,
                     MinCapacity = item.MinCapacity,
                     PriceStartingFrom = item.MinPrice,
-                    //ImagesData=item.ImagesData,
+                    ImagesData=item.ImagesData,
 
                     ReservationDates = new List<DateTime>() // Initialize the list
                 };

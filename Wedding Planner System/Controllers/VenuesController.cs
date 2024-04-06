@@ -158,7 +158,7 @@ namespace Wedding_Planner_System.Controllers
             try
             {
                 await venueBLL.SaveVenue(VenueDto);
-                return Ok("Venue saved successfully.");
+                return Ok(new { message = "Venue saved successfully." }); // Return JSON object with success messagel
             }
             catch (ArgumentNullException ex)
             {
