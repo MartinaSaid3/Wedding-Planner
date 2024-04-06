@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business_Logic_Layer.Service.EmailService
 {
-    public class EmailSender
+    public class EmailSender:IEmailSender
     {
         public async Task SendEmail(string subject, string toEmail, string username, string message, string Html)
         {

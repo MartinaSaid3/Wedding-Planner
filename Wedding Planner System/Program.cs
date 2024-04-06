@@ -10,10 +10,14 @@ using Data_Access_Layer.Repo.VenueRepo;
 using Hangfire;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using Microsoft.AspNetCore.Mvc.Routing;
+using Business_Logic_Layer.Service.EmailService;
 
 namespace Wedding_Planner_System
 {
@@ -27,7 +31,7 @@ namespace Wedding_Planner_System
             //builder.Services.AddDbContext<ApplicationEntity>(options =>
             //    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddDbContext<ApplicationEntity>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Wedding Planner System")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 
@@ -64,6 +68,13 @@ namespace Wedding_Planner_System
             builder.Services.AddScoped<IVenueBLL, VenueBLL>();
             builder.Services.AddScoped<IAccountBLL, AccountBLL>();
             builder.Services.AddScoped<IAccountDAL, AccountDAL>();
+            builder.Services.AddScoped<IEmailSender, EmailSender>();
+            builder.Services.AddScoped<IUrlHelper>(factory =>
+            {
+                var actionContext = factory.GetService<IActionContextAccessor>()!
+                                           .ActionContext;
+                return new UrlHelper(actionContext!);
+            });
 
             builder.Services.AddHangfire(x => x.UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddHangfireServer();

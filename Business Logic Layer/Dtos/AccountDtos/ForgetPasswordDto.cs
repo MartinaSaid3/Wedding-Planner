@@ -12,5 +12,7 @@ namespace Business_Logic_Layer.Dtos.AccountDtos
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+        [Required]
+        public string UserName { get; set; }
     }
 }

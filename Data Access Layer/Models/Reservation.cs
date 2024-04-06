@@ -21,6 +21,7 @@ namespace Data_Access_Layer.Models
 
         public string SpecialRequests { get; set; }
         public string Email { get; set; }
+        public string Service { get; set; }
 
 
         public ApprovalStatusReservation Status { get; set; }
@@ -36,6 +37,7 @@ namespace Data_Access_Layer.Models
             Accepted,
             Rejected
         }
+        
 
         //navigation property
         public Venue? Venue { get; set; }

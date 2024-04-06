@@ -12,5 +12,6 @@ namespace Data_Access_Layer.Repo.AccountRepo
         Task<ServicesResult<ApplicationUser>> FindUserByNameAsync(string username);
         Task<bool> CheckPasswordAsync(ApplicationUser user, string password);
         Task<IList<string>> GetRolesAsync(ApplicationUser user);
+        Task<ApplicationUser> GetUserToResetPassword(string userName);
     }
 }

@@ -1,8 +1,13 @@
 ﻿using Azure.Core;
 using Business_Logic_Layer.Dtos.AccountDtos;
+using Business_Logic_Layer.Dtos.ReservationDtos;
+using Business_Logic_Layer.Service.EmailService;
+using Business_Logic_Layer.Service.ReservationService;
 using CloudinaryDotNet;
 using Data_Access_Layer.Models;
 using Data_Access_Layer.Repo.AccountRepo;
+using Data_Access_Layer.Repo.ReservationRepo;
+using Hangfire;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -25,17 +30,20 @@ namespace Business_Logic_Layer.Service.AccountServices
         private readonly IUrlHelper _urlHelper;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private Data_Access_Layer.Repo.AccountRepo.IAccountDAL accountDAL;
+        private Business_Logic_Layer.Service.EmailService.IEmailSender _emailSender;
         public AccountBLL(UserManager<ApplicationUser> UserManger,
             IConfiguration Config,
             IUrlHelper urlHelper,
             IHttpContextAccessor httpContextAccessor,
-            IAccountDAL _accountDAL)
+            IAccountDAL _accountDAL,
+            EmailService.IEmailSender emailSender)
         {
             this.userManager = UserManger;
             this.Config = Config;
             _urlHelper = urlHelper;
             _httpContextAccessor = httpContextAccessor;
             accountDAL = _accountDAL;
+            _emailSender = emailSender;
         }
 
         public async Task<ServicesResult<ApplicationUser>> Registration(RegisterUserDto UserDto)
@@ -110,7 +118,7 @@ namespace Business_Logic_Layer.Service.AccountServices
 
         public async Task<ServicesResult<ApplicationUser>> ForgetPasswordAsync(ForgetPasswordDto model)
         {
-            var user = await userManager.FindByEmailAsync(model.Email);
+            var user = await userManager.FindByEmailAsync(model.UserName);
             if (user == null)
             {
                 // Don't reveal that the user does not exist or is not confirmed
@@ -122,12 +130,22 @@ namespace Business_Logic_Layer.Service.AccountServices
                 "Account",
                 new { email = model.Email, token = token },
                 _httpContextAccessor.HttpContext?.Request.Scheme);
+            var forReset = await accountDAL.GetUserToResetPassword(user.UserName);
+            if (forReset != null)
+            {
+                BackgroundJob.Enqueue(() => _emailSender.SendEmail("Reset Password", forReset.Email, forReset.Email, "To reset your password, please click on this link: ", $"<a href = {resetLink}>Click Here</a>"));
+            }
+            else
+                return ServicesResult<ApplicationUser>.Failure("Invalid Email.");
+
 
             //var emailService = new EmailService("smtp.gmail.com", 587, "your_email@gmail.com", "your_gmail_password");
             //await emailService.SendEmailAsync(user.Email, "Password Reset", "Please click the following link to reset your password: " + resetLink);
 
             return ServicesResult<ApplicationUser>.Successed(default!, "If your email is registered, you will receive instructions to reset your password");
         }
+
+  
 
         public async Task<ServicesResult<ApplicationUser>> ResetPassword(ResetPasswordDto model)
         {
