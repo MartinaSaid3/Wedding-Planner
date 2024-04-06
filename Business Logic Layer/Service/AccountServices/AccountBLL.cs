@@ -137,11 +137,14 @@ namespace Business_Logic_Layer.Service.AccountServices
                 new { email = model.Email, token = token },
                 _httpContextAccessor.HttpContext!.Request.Scheme,
                 _httpContextAccessor.HttpContext!.Request.Host);
+            string url = $"localhost:4200/account/reset?token={token}";
 
             var forReset = await userManager.FindByNameAsync(user.UserName!);
             if (forReset != null)
             {
-                BackgroundJob.Enqueue(() => _emailSender.SendEmail("Reset Password", forReset.Email!, forReset.Email!, "To reset your password, please click on this link: ", $"<a href = {resetLink}>Click Here</a>"));
+                //BackgroundJob.Enqueue(() => _emailSender.SendEmail("Reset Password", forReset.Email!, forReset.Email!, $"<a href = {resetLink}>Click Here</a>", "To reset your password, please click on this link: "));
+                BackgroundJob.Enqueue(() => _emailSender.SendEmail("Reset Password", forReset.Email!, forReset.Email!, $"<a href = {url}>Click Here</a>", "To reset your password, please click on this link: "));
+
             }
             else
                 return ServicesResult<ApplicationUser>.Failure("Invalid Email.");

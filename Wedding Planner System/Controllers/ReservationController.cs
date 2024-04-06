@@ -66,7 +66,7 @@ namespace Wedding_Planner_System.Controllers
             //background service
             RecurringJob.AddOrUpdate("back-recurring-job", () => ReservationBLL.Back(), Cron.Hourly(24));
             EmailSender email = new EmailSender();
-            BackgroundJob.Enqueue(() => email.SendEmail("Successful Reservation", reservationDto.Email, reservationDto.Email, "Congratulation Your Registration Done Successfully", ""));
+            BackgroundJob.Enqueue(() => email.SendEmail("Successful Reservation", reservationDto.Email, reservationDto.Email, "", "Congratulation Your Registration Done Successfully"));
             
             RecurringJob.AddOrUpdate("Rate-recurring-job", ()=> ReservationBLL.Rate(), Cron.Hourly(24));
 

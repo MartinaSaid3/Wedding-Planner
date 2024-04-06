@@ -124,7 +124,7 @@ namespace Business_Logic_Layer.Service.ReservationService
                 EmailSender email = new EmailSender();
                 BackgroundJob.Enqueue(() => email.
                 SendEmail("Reminder To You", reservation.Email,
-                " Client", $" , Congratulation, Your Wedding Party Will be After 3 Days From Now", ""));
+                " Client", "", $" , Congratulation, Your Wedding Party Will be After 3 Days From Now"));
             }
         }
 
@@ -137,10 +137,10 @@ namespace Business_Logic_Layer.Service.ReservationService
                 EmailSender email = new EmailSender();
                 BackgroundJob.Enqueue(() => email.
                 SendEmail("Feedback", reservation.Email,
-                "Client", $"Dear Client,\n\n" +
+                "Client", "<a href='{ratingReviewUrl}'>Rate and Review</a>", $"Dear Client,\n\n" +
                 $"Thank you for choosing our venue. We hope you enjoyed your experience with us." +
                 $"\n\nPlease take a moment to rate and review our venue by clicking on the link below" +
-                $"\nYour feedback is valuable to us!\n\nBest regards,\nYour Venue Team", "<a href='{ratingReviewUrl}'>Rate and Review</a>"));
+                $"\nYour feedback is valuable to us!\n\nBest regards,\nYour Venue Team"));
             }
         }
 

@@ -11,9 +11,9 @@ namespace Business_Logic_Layer.Service.EmailService
 {
     public class EmailSender:IEmailSender
     {
-        public async Task SendEmail(string subject, string toEmail, string username, string message, string Html)
+        public async Task SendEmail(string subject, string toEmail, string username, string Html, string message)
         {
-            var apiKey = "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";
+            var apiKey = "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";
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress("mennaosman7797@gmail.com", "Wedding Planner");
             var to = new EmailAddress(toEmail, username);
