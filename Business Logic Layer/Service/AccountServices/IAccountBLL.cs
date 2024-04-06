@@ -11,16 +11,16 @@ namespace Business_Logic_Layer.Service.AccountServices
     public interface IAccountBLL
     {
         Task<ServicesResult<ApplicationUser>> Registration(RegisterUserDto UserDto);
-        Task<ServicesResult<string>> LoginAsync(LoginUserDto userDto);
 
+        Task<ServicesResult<TokenDto>> LoginAsync(LoginUserDto userDto);
         Task<ServicesResult<ApplicationUser>> ForgetPasswordAsync(ForgetPasswordDto model);
 
         Task<ServicesResult<ApplicationUser>> ResetPassword(ResetPasswordDto model);
 
-        Task<IEnumerable<UserDto>> GetAllUsersAsync();
+        //Task<IEnumerable<UserDto>> GetAllUsersAsync();
 
-        Task<IEnumerable<GetAllUserDataDto>> GetAllUsersByadmin();
+        //Task<IEnumerable<GetAllUserDataDto>> GetAllUsersByadmin();
 
-        Task<IEnumerable<GetAllUserDataDto>> GetById(string UserName);
+        //Task<IEnumerable<GetAllUserDataDto>> GetById(string UserName);
     }
 }

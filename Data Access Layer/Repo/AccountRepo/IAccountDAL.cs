@@ -15,10 +15,10 @@ namespace Data_Access_Layer.Repo.AccountRepo
         Task<ApplicationUser> GetUserToResetPassword(string userName);
 
 
-        Task<IEnumerable<ApplicationUser>> GetAllUsersAsync();
+        //Task<IEnumerable<ApplicationUser>> GetAllUsersAsync();
 
-        Task<IEnumerable<ApplicationUser>> GetAllUsersByAdmin();
+        //Task<IEnumerable<ApplicationUser>> GetAllUsersByAdmin();
 
-        Task<ApplicationUser> GetByIdAsync(string UserName);
+        //Task<ApplicationUser> GetByIdAsync(string UserName);
     }
 }
