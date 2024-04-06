@@ -44,7 +44,6 @@ namespace Data_Access_Layer.Repo.AccountRepo
         }
         public async Task<ApplicationUser> GetUserToResetPassword(string userName)
         {
-            DateTime targetDate = DateTime.Now.AddDays(3);
             return await _context.Users.FirstOrDefaultAsync(x => x.UserName == userName);
         }
     }

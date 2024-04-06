@@ -11,6 +11,7 @@ using Hangfire;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -27,22 +28,22 @@ namespace Business_Logic_Layer.Service.AccountServices
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IConfiguration Config;
-        private readonly IUrlHelper _urlHelper;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private Data_Access_Layer.Repo.AccountRepo.IAccountDAL accountDAL;
+        private readonly LinkGenerator _linkGenerator;
         private Business_Logic_Layer.Service.EmailService.IEmailSender _emailSender;
         public AccountBLL(UserManager<ApplicationUser> UserManger,
             IConfiguration Config,
-            IUrlHelper urlHelper,
             IHttpContextAccessor httpContextAccessor,
             IAccountDAL _accountDAL,
+            LinkGenerator linkGenerator,
             EmailService.IEmailSender emailSender)
         {
             this.userManager = UserManger;
             this.Config = Config;
-            _urlHelper = urlHelper;
             _httpContextAccessor = httpContextAccessor;
             accountDAL = _accountDAL;
+            _linkGenerator = linkGenerator;
             _emailSender = emailSender;
         }
 
@@ -126,14 +127,21 @@ namespace Business_Logic_Layer.Service.AccountServices
             }
 
             var token = await userManager.GeneratePasswordResetTokenAsync(user);
-            var resetLink = _urlHelper.Action("ResetPassword",
+            //var resetLink = _urlHelper.Action("ResetPassword",
+            //    "Account",
+            //    new { email = model.Email, token = token },
+            //    _httpContextAccessor.HttpContext?.Request.Scheme);
+
+            var resetLink = _linkGenerator.GetUriByAction("ResetPassword",
                 "Account",
                 new { email = model.Email, token = token },
-                _httpContextAccessor.HttpContext?.Request.Scheme);
-            var forReset = await accountDAL.GetUserToResetPassword(user.UserName);
+                _httpContextAccessor.HttpContext!.Request.Scheme,
+                _httpContextAccessor.HttpContext!.Request.Host);
+
+            var forReset = await userManager.FindByNameAsync(user.UserName!);
             if (forReset != null)
             {
-                BackgroundJob.Enqueue(() => _emailSender.SendEmail("Reset Password", forReset.Email, forReset.Email, "To reset your password, please click on this link: ", $"<a href = {resetLink}>Click Here</a>"));
+                BackgroundJob.Enqueue(() => _emailSender.SendEmail("Reset Password", forReset.Email!, forReset.Email!, "To reset your password, please click on this link: ", $"<a href = {resetLink}>Click Here</a>"));
             }
             else
                 return ServicesResult<ApplicationUser>.Failure("Invalid Email.");
@@ -145,7 +153,7 @@ namespace Business_Logic_Layer.Service.AccountServices
             return ServicesResult<ApplicationUser>.Successed(default!, "If your email is registered, you will receive instructions to reset your password");
         }
 
-  
+
 
         public async Task<ServicesResult<ApplicationUser>> ResetPassword(ResetPasswordDto model)
         {

@@ -64,17 +64,11 @@ namespace Wedding_Planner_System
             builder.Services.AddScoped<UserManager<ApplicationUser>>();
             builder.Services.AddScoped<IReservationBLL, ReservationBLL>();
             builder.Services.AddScoped<IReservationDAL, ReservationDAL>();
-            builder.Services.AddScoped<IVenueDAL,VenueDAL>();
+            builder.Services.AddScoped<IVenueDAL, VenueDAL>();
             builder.Services.AddScoped<IVenueBLL, VenueBLL>();
             builder.Services.AddScoped<IAccountBLL, AccountBLL>();
             builder.Services.AddScoped<IAccountDAL, AccountDAL>();
             builder.Services.AddScoped<IEmailSender, EmailSender>();
-            builder.Services.AddScoped<IUrlHelper>(factory =>
-            {
-                var actionContext = factory.GetService<IActionContextAccessor>()!
-                                           .ActionContext;
-                return new UrlHelper(actionContext!);
-            });
 
             builder.Services.AddHangfire(x => x.UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddHangfireServer();
