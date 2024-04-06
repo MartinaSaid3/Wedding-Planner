@@ -265,6 +265,25 @@ namespace Wedding_Planner_System.Controllers
             }
         }
 
+        [HttpGet("ReservationUsers/{id}")]
+        public async Task<ActionResult<VenueWithReservationUserDto>> GetByIdWithUsers(int id)
+        {
+            try
+            {
+                VenueWithReservationUserDto venueDto = await venueBLL.GetVenueByIdwithusers(id);
+                return Ok(venueDto);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+
+        }
+
 
     }
 }

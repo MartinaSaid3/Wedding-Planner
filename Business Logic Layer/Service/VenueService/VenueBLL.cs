@@ -409,6 +409,41 @@ namespace Business_Logic_Layer.Service.VenueService
             return true;
         }
 
+        public async Task<VenueWithReservationUserDto> GetVenueByIdwithusers(int id)
+        {
+            if (id <= 0)
+            {
+                throw new ArgumentException("Invalid venue ID. Please provide a valid ID.");
+            }
+
+            Venue v1 = await venueDAL.GetVenueById(id);
+
+            if (v1 == null)
+            {
+                throw new Exception("This Venue Does Not Exist");
+            }
+
+            VenueWithReservationUserDto venueDto = new VenueWithReservationUserDto
+            {
+                Id = v1.Id,
+                Name = v1.Name,
+                Description = v1.Description,
+                Location = v1.Location,
+                OpenBuffet = v1.OpenBuffet,
+                SetMenue = v1.SetMenue,
+                HighTea = v1.HighTea,
+                PriceStartingFrom = v1.MinPrice,
+                MinCapacity = v1.MinCapacity,
+                MaxCapacity = v1.MaxCapacity,
+                ImagesData = v1.ImagesData,
+                ReservationUser=v1.Reservations.Select(r => r.UserName).ToList()
+            
+            };
+
+            return venueDto;
+
+        }
+
 
 
     }
