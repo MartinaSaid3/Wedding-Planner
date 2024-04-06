@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business_Logic_Layer.Dtos.ReservationDtos
 {
-    public class ReservationDto
+    public class ReservationWithTotalPriceDto
     {
         public string UserName { get; set; }
 
@@ -23,7 +23,6 @@ namespace Business_Logic_Layer.Dtos.ReservationDtos
         [Required]
         public string Email { get; set; }
         public string Service { get; set; }
-   
-
+        public double TotalPrice { get; set; }
     }
 }

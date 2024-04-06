@@ -28,26 +28,26 @@ namespace Wedding_Planner_System.Controllers
         {
             ReservationBLL = _reservationBLL;
         }
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         // GET: api/Reservations
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ReservationDto>>> GetAllReservations()
+        public async Task<ActionResult<IEnumerable<ReservationWithTotalPriceDto>>> GetAllReservations()
         {
             var reservations = await ReservationBLL.GetAllReservations();
             return Ok(reservations);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         // GET: api/Reservations/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ReservationDto>> GetReservation(int id)
+        public async Task<ActionResult<ReservationWithTotalPriceDto>> GetReservation(int id)
         {
             var reservation = await ReservationBLL.GetReservation(id);
 
             return Ok(reservation);
         }
 
-        [Authorize(Roles = "client")]
+        //[Authorize(Roles = "client")]
         // POST: api/Reservations
         [HttpPost]
         public async Task<IActionResult> CreateReservation(ReservationDto reservationDto)
@@ -61,16 +61,39 @@ namespace Wedding_Planner_System.Controllers
             // Generate a unique token for the reservation
             //string uniqueToken = ReservationBLL.GenerateUniqueToken();
 
-            await ReservationBLL.CreateReservation(reservationDto);
+            try
+            {
+                // Calculate total price
+                double totalPrice = await ReservationBLL.CalculateTotalPrice(reservationDto.VenueId, reservationDto.NumOfGuests, reservationDto.Service);
+
+                // Create reservation
+                await ReservationBLL.CreateReservation(reservationDto);
+
+                return Ok();
+            }
+            catch (ArgumentNullException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while creating the reservation.");
+            }
+
+          
 
             //background service
-            RecurringJob.AddOrUpdate("back-recurring-job", () => ReservationBLL.Back(), Cron.Hourly(24));
-            EmailSender email = new EmailSender();
-            BackgroundJob.Enqueue(() => email.SendEmail("Successful Reservation", reservationDto.Email, reservationDto.Email, "", "Congratulation Your Registration Done Successfully"));
+            //RecurringJob.AddOrUpdate("back-recurring-job", () => ReservationBLL.Back(), Cron.Hourly(24));
+            //EmailSender email = new EmailSender();
+            //BackgroundJob.Enqueue(() => email.SendEmail("Successful Reservation", reservationDto.Email, reservationDto.Email, "", "Congratulation Your Registration Done Successfully"));
             
-            RecurringJob.AddOrUpdate("Rate-recurring-job", ()=> ReservationBLL.Rate(), Cron.Hourly(24));
+            //RecurringJob.AddOrUpdate("Rate-recurring-job", ()=> ReservationBLL.Rate(), Cron.Hourly(24));
 
-            return Ok();
+           
 
             //return CreatedAtAction("GetReservation", new { id = reservation.Id }, reservationDto);
         }

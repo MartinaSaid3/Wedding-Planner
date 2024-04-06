@@ -23,6 +23,7 @@ namespace Data_Access_Layer.Models
         public string SpecialRequests { get; set; }
         public string Email { get; set; }
         public string Service { get; set; }
+        public double TotalPrice { get; set; }
 
 
         public ApprovalStatusReservation Status { get; set; }

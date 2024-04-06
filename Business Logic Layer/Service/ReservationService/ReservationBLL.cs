@@ -14,33 +14,47 @@ namespace Business_Logic_Layer.Service.ReservationService
     public class ReservationBLL : IReservationBLL
     {
         private Data_Access_Layer.Repo.ReservationRepo.IReservationDAL ReservationDAL;
+        private readonly IVenueDAL venueDAL;
         private Mapper PersonMapper;
-        public ReservationBLL(Data_Access_Layer.Repo.ReservationRepo.IReservationDAL _ReservationDAL)
+        public ReservationBLL(Data_Access_Layer.Repo.ReservationRepo.IReservationDAL _ReservationDAL,IVenueDAL _venueDAL)
         {
             ReservationDAL = _ReservationDAL;
+            venueDAL = _venueDAL;
             var configPeron = new MapperConfiguration(cfg => cfg.CreateMap<Reservation, ReservationDto>().ReverseMap());
             PersonMapper = new Mapper(configPeron);
         }
-        public async Task<List<ReservationDto>> GetAllReservations()
+        public async Task<List<ReservationWithTotalPriceDto>> GetAllReservations()
         {
             List<Reservation> reservationsFromDataBase = await ReservationDAL.GetAllReservations();
             var myData = reservationsFromDataBase.ToList();
-            var reservationDtos = myData.Select(x => new ReservationDto
+            var reservationDtos = myData.Select(x => new ReservationWithTotalPriceDto
             {
                 Date = x.Date,
                 Email = x.Email,
                 NumOfGuests = x.NumOfGuests,
                 SpecialRequests = x.SpecialRequests,
-                VenueId = x.VenueId
+                VenueId = x.VenueId,
+                TotalPrice=x.TotalPrice
+                
 
             }).ToList();
             return reservationDtos;
         }
-        public async Task<ReservationDto> GetReservation(int id)
+        public async Task<ReservationWithTotalPriceDto> GetReservation(int id)
         {
             var reservation = await ReservationDAL.GetReservation(id);
 
-            ReservationDto reservationDto = PersonMapper.Map<Reservation, ReservationDto>(reservation);
+            ReservationWithTotalPriceDto reservationDto = new ReservationWithTotalPriceDto
+            {
+                UserName = reservation.UserName,
+                Date = reservation.Date,
+                NumOfGuests = reservation.NumOfGuests,
+                VenueId = reservation.VenueId,
+                SpecialRequests = reservation.SpecialRequests,
+                Email = reservation.Email,
+                Service = reservation.Service,
+                TotalPrice = reservation.TotalPrice
+            };
 
             return reservationDto;
         }
@@ -51,7 +65,12 @@ namespace Business_Logic_Layer.Service.ReservationService
             {
                 throw new InvalidOperationException("The date is not available for reservation.");
             }
+
+            // Calculate total price based on venue, number of guests, and selected service
+            double totalPrice = await CalculateTotalPrice(reservationDto.VenueId, reservationDto.NumOfGuests, reservationDto.Service);
+
             Reservation reservation = PersonMapper.Map<ReservationDto, Reservation>(reservationDto);
+            reservation.TotalPrice = totalPrice;
 
             await ReservationDAL.CreateReservation(reservation);
         }
@@ -174,6 +193,39 @@ namespace Business_Logic_Layer.Service.ReservationService
 
             return true;
 
+        }
+
+        public async Task<double> CalculateTotalPrice(int venueId, int numOfGuests, string selectedService)
+        {
+            // Get venue details
+            Venue venue = await venueDAL.GetVenueById(venueId);
+
+            if (venue == null)
+            {
+                throw new ArgumentNullException("Venue not found.");
+            }
+
+            // Trim and convert selectedService to lower case for case-insensitive comparison
+            selectedService = selectedService.Trim().ToLower();
+
+            // Calculate total price based on the selected service
+            double totalPrice = 0;
+            switch (selectedService)
+            {
+                case "openbuffet":
+                    totalPrice = numOfGuests * venue.PriceOpenBuffetPerPerson;
+                    break;
+                case "setmenue":
+                    totalPrice = numOfGuests * venue.PriceSetMenuePerPerson;
+                    break;
+                case "hightea":
+                    totalPrice = numOfGuests * venue.PriceHighTeaPerPerson;
+                    break;
+                default:
+                    throw new ArgumentException("Invalid service selected.");
+            }
+
+            return totalPrice;
         }
     }
 }
