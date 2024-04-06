@@ -57,6 +57,6 @@ namespace Business_Logic_Layer.Dtos.VenueDtos
         //public List<byte[]> Images { get; set; }
 
         public List<DateTime> ReservationDates { get; set; }
-        public List<IFormFile> ImagesData { get; set; }
+        public List<string> ImagesData { get; set; }
     }
 }

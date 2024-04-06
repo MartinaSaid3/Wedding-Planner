@@ -35,6 +35,8 @@ namespace Business_Logic_Layer.Dtos.VenueDtos
         //reference type hatb2a null lw 3mlt add feha hatdrab exception 
         public List<int> ReservationId { get; set; } = new List<int>();
 
-        public List<IFormFile> ImagesData { get; set; }
+        public List<string> ImagesData { get; set; }
+
+
     }
 }
