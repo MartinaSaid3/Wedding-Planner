@@ -53,7 +53,7 @@ namespace Wedding_Planner_System.Controllers
             if (result.Success)
             {
 
-                return Ok(result.Data);
+                return Ok(result);
             }
             return Unauthorized(result.Message);
         }
