@@ -33,6 +33,8 @@ namespace Business_Logic_Layer.Service.ReservationService
                 Email = x.Email,
                 NumOfGuests = x.NumOfGuests,
                 SpecialRequests = x.SpecialRequests,
+                Service=x.Service,
+                UserName=x.UserName,
                 VenueId = x.VenueId,
                 TotalPrice=x.TotalPrice
                 
@@ -58,6 +60,7 @@ namespace Business_Logic_Layer.Service.ReservationService
 
             return reservationDto;
         }
+
         public async Task CreateReservation(ReservationDto reservationDto)
         {
             // Check if the date is available for reservation
