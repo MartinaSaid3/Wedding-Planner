@@ -12,6 +12,7 @@ namespace Data_Access_Layer.Models
     {
         [Key]
         public int Id { get; set; }
+        public string UserName { get; set; }
         public DateTime Date { get; set; }
         public int NumOfGuests { get; set; }
 

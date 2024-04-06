@@ -28,7 +28,7 @@ namespace Wedding_Planner_System.Controllers
         {
             ReservationBLL = _reservationBLL;
         }
-        [Authorize(Roles = "Admin")]
+        //[Authorize]
         // GET: api/Reservations
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ReservationDto>>> GetAllReservations()
@@ -37,7 +37,7 @@ namespace Wedding_Planner_System.Controllers
             return Ok(reservations);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         // GET: api/Reservations/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ReservationDto>> GetReservation(int id)
@@ -47,7 +47,7 @@ namespace Wedding_Planner_System.Controllers
             return Ok(reservation);
         }
 
-        [Authorize(Roles = "client")]
+        //[Authorize(Roles = "client")]
         // POST: api/Reservations
         [HttpPost]
         public async Task<IActionResult> CreateReservation(ReservationDto reservationDto)
@@ -75,7 +75,7 @@ namespace Wedding_Planner_System.Controllers
             //return CreatedAtAction("GetReservation", new { id = reservation.Id }, reservationDto);
         }
 
-        [Authorize(Roles = "client")]
+        //[Authorize(Roles = "client")]
         // PUT: api/Reservations/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutReservation(int id, ReservationDto reservationDTO)
@@ -107,7 +107,7 @@ namespace Wedding_Planner_System.Controllers
             return NoContent();
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         // DELETE: api/Reservations/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteReservation(int id)
@@ -117,7 +117,7 @@ namespace Wedding_Planner_System.Controllers
             return NoContent();
         }
 
-        [Authorize(Roles = "ServiceProvider")]
+        //[Authorize(Roles = "ServiceProvider")]
 
         [HttpPut("Accept/{id}")]
         public async Task<IActionResult> AcceptReservation(int id)
@@ -134,7 +134,7 @@ namespace Wedding_Planner_System.Controllers
             }
         }
 
-        [Authorize(Roles = "ServiceProvider")]
+        //[Authorize(Roles = "ServiceProvider")]
         [HttpPut("Reject/{id}")]
         public async Task<IActionResult> RejectReservation(int id)
         {

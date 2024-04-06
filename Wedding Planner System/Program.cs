@@ -47,15 +47,15 @@ namespace Wedding_Planner_System
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(options =>
             {
-                options.SaveToken = true;
-                options.RequireHttpsMetadata = false;
+                //options.SaveToken = true;
+                //options.RequireHttpsMetadata = false;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
-                    ValidAudience = builder.Configuration["JWT:ValidAudience"],
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    //ValidateIssuerSigningKey = true,
+                    //ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
+                    //ValidAudience = builder.Configuration["JWT:ValidAudience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
                 };
             });

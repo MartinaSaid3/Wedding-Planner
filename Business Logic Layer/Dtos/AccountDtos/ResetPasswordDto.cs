@@ -10,8 +10,8 @@ namespace Business_Logic_Layer.Dtos.AccountDtos
     public class ResetPasswordDto
     {
         [Required]
-        [EmailAddress]
-        public string Email { get; set; }
+        //[EmailAddress]
+        public string UserName { get; set; }
 
         [Required]
         public string Token { get; set; }

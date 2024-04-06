@@ -9,6 +9,8 @@ namespace Business_Logic_Layer.Dtos.ReservationDtos
 {
     public class ReservationDto
     {
+        public string UserName { get; set; }
+
         [Required]
         public DateTime Date { get; set; }
         [Required]
