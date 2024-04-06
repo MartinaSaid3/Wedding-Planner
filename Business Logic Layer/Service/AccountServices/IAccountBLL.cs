@@ -16,5 +16,11 @@ namespace Business_Logic_Layer.Service.AccountServices
         Task<ServicesResult<ApplicationUser>> ForgetPasswordAsync(ForgetPasswordDto model);
 
         Task<ServicesResult<ApplicationUser>> ResetPassword(ResetPasswordDto model);
+
+        Task<IEnumerable<UserDto>> GetAllUsersAsync();
+
+        Task<IEnumerable<GetAllUserDataDto>> GetAllUsersByadmin();
+
+        Task<IEnumerable<GetAllUserDataDto>> GetById(string UserName);
     }
 }

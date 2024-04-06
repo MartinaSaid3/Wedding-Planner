@@ -46,6 +46,26 @@ namespace Data_Access_Layer.Repo.AccountRepo
         {
             return await _context.Users.FirstOrDefaultAsync(x => x.UserName == userName);
         }
+
+        public async Task<IEnumerable<ApplicationUser>> GetAllUsersAsync()
+        {
+            return await _context.Users.ToListAsync();
+        }
+
+        public async Task<IEnumerable<ApplicationUser>> GetAllUsersByAdmin()
+        {
+            return await _context.Users.ToListAsync();
+        }
+
+        //public async Task<ApplicationUser> GetByIdAsync(string UserName)
+        //{
+        //    return await _context.Users.FindAsync(UserName);
+        //}
+
+        public async Task<ApplicationUser> GetByIdAsync(string UserName)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.UserName == UserName);
+        }
     }
 
 }

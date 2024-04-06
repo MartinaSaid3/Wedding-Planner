@@ -177,6 +177,73 @@ namespace Business_Logic_Layer.Service.AccountServices
 
             throw new InvalidOperationException("Invalid token or password reset failed.");
         }
+
+        public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
+        {
+            var users = await accountDAL.GetAllUsersAsync();
+
+            // Convert ApplicationUser objects to UserDto objects
+            var userDtos = new List<UserDto>();
+            foreach (var user in users)
+            {
+                userDtos.Add(new UserDto
+                {
+                    Username = user.UserName,
+                    Email = user.Email,
+                    Role = user.Role // Assuming you have a property representing the user's role in ApplicationUser
+                });
+            }
+
+            return userDtos;
+        }
+
+        public async Task<IEnumerable<GetAllUserDataDto>> GetAllUsersByadmin()
+        {
+            var Users = await accountDAL.GetAllUsersByAdmin();
+
+            // Convert ApplicationUser objects to UserDto objects
+            var userDto = new List<GetAllUserDataDto>();
+            foreach (var User in Users)
+            {
+                userDto.Add(new GetAllUserDataDto
+                {
+
+                    UserName = User.UserName,
+                    Email = User.Email,
+                    Role = User.Role,// Assuming you have a property representing the user's role in ApplicationUser
+                    Address = User.UserLocation,
+                    Gender = User.Gender,
+                    Phone = User.PhoneNumber,
+                    SSN = User.SSN,
+                });
+            }
+
+            return userDto;
+        }
+
+        public async Task<IEnumerable<GetAllUserDataDto>> GetById(string UserName)
+        {
+            var user = await accountDAL.GetByIdAsync(UserName);
+            if (user != null)
+            {
+                var userDto = new GetAllUserDataDto
+                {
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    Role = user.Role,
+                    Address = user.UserLocation,
+                    Gender = user.Gender,
+                    Phone = user.PhoneNumber,
+                    SSN = user.SSN
+                };
+                return new List<GetAllUserDataDto> { userDto };
+            }
+            else
+            {
+                // Handle case where user with the given ID is not found
+                return Enumerable.Empty<GetAllUserDataDto>(); // Return an empty collection
+            }
+        }
     }
 }
 

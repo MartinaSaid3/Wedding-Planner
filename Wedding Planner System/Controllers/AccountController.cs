@@ -95,7 +95,51 @@ namespace Wedding_Planner_System.Controllers
         //    return Ok("Logged Out Successfully");
         //}
 
+        //get role 
+        [HttpGet("UserRole")]
+
+        // [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await _accountBLL.GetAllUsersAsync();
+            return Ok(users);
+        }
+
+        //get ahh data of user 
+        [HttpGet("GetAllUser")]
+        public async Task<IActionResult> GetAllUserbyAdmin()
+        {
+            var users = await _accountBLL.GetAllUsersByadmin();
+            return Ok(users);
+        }
+
+        //get user by id
+
+        //[HttpGet("{UserName}")]
+        //public async Task<IActionResult> GetUserById(string UserName)
+        //{
+        //    var user = await _accountBLL.GetById(UserName);
+        //    if (user == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(user);
+        //}
+        //get by name
+        [HttpGet("GetByUsername")]
+        public async Task<IActionResult> GetUserByUsername(string username)
+        {
+            var user = await _accountBLL.GetById(username);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return Ok(user);
+        }
+
     }
 
-
 }
+
+
+
