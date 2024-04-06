@@ -58,12 +58,12 @@ namespace Business_Logic_Layer.Service.ReservationService
 
             return reservationDto;
         }
-        public async Task CreateReservation(ReservationDto reservationDto)
+        public async Task<ServicesResult<ApplicationUser>> CreateReservation(ReservationDto reservationDto)
         {
             // Check if the date is available for reservation
             if (!await ReservationDAL.IsDateAvailable(reservationDto.Date, reservationDto.VenueId))
             {
-                throw new InvalidOperationException("The date is not available for reservation.");
+                return ServicesResult<ApplicationUser>.Failure("The date is not available for reservation.");
             }
 
             // Calculate total price based on venue, number of guests, and selected service
@@ -73,6 +73,7 @@ namespace Business_Logic_Layer.Service.ReservationService
             reservation.TotalPrice = totalPrice;
 
             await ReservationDAL.CreateReservation(reservation);
+            return ServicesResult<ApplicationUser>.Successed(default, "Added Successfully");
         }
         public async Task<bool> IsDateAvailable(DateTime date, int venueId)
         {
@@ -83,16 +84,17 @@ namespace Business_Logic_Layer.Service.ReservationService
         {
             return await ReservationDAL.ReservationExistsForDate(date);
         }
-        public async Task PutReservation(int id, ReservationDto reservationDTO)
+        public async Task<ServicesResult<ApplicationUser>> PutReservation(int id, ReservationDto reservationDTO)
         {
             // Check if the date is available for reservation
             if (!await ReservationDAL.IsDateAvailable(reservationDTO.Date, reservationDTO.VenueId))
             {
-                throw new InvalidOperationException("The date is not available for reservation.");
+                return ServicesResult<ApplicationUser>.Failure("The date is not available for reservation.");
             }
 
             Reservation reservation = PersonMapper.Map<ReservationDto, Reservation>(reservationDTO);
             await ReservationDAL.PutReservation(id, reservation);
+            return ServicesResult<ApplicationUser>.Successed(default, "Updated Successfully");
 
         }
         public async Task<Reservation> GetReservationForEdit(int id)

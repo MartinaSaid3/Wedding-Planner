@@ -28,7 +28,7 @@ namespace Wedding_Planner_System.Controllers
         {
             ReservationBLL = _reservationBLL;
         }
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         // GET: api/Reservations
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ReservationWithTotalPriceDto>>> GetAllReservations()
@@ -37,7 +37,7 @@ namespace Wedding_Planner_System.Controllers
             return Ok(reservations);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         // GET: api/Reservations/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ReservationWithTotalPriceDto>> GetReservation(int id)
@@ -47,7 +47,7 @@ namespace Wedding_Planner_System.Controllers
             return Ok(reservation);
         }
 
-        //[Authorize(Roles = "client")]
+        [Authorize(Roles = "client")]
         // POST: api/Reservations
         [HttpPost]
         public async Task<IActionResult> CreateReservation(ReservationDto reservationDto)

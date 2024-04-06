@@ -12,10 +12,10 @@ namespace Business_Logic_Layer.Service.ReservationService
     {
         Task<List<ReservationWithTotalPriceDto>> GetAllReservations();
         Task<ReservationWithTotalPriceDto> GetReservation(int id);
-        Task CreateReservation(ReservationDto reservationDto);
+        Task<ServicesResult<ApplicationUser>> CreateReservation(ReservationDto reservationDto);
         Task<bool> IsDateAvailable(DateTime date, int venueId);
         Task<bool> ReservationExistsForDate(DateTime date);
-        Task PutReservation(int id, ReservationDto reservationDTO);
+        Task<ServicesResult<ApplicationUser>> PutReservation(int id, ReservationDto reservationDTO);
         Task<Reservation> GetReservationForEdit(int id);
         Task<bool> ReservationExists(int id);
         Task<Reservation> DeleteReservation(int id);
