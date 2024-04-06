@@ -20,5 +20,7 @@ namespace Business_Logic_Layer.Dtos.ReservationDtos
         public string SpecialRequests { get; set; }
         [Required]
         public string Email { get; set; }
+        public string Service { get; set; }
+
     }
 }

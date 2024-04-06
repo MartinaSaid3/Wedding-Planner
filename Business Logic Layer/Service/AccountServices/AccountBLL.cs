@@ -119,7 +119,7 @@ namespace Business_Logic_Layer.Service.AccountServices
 
         public async Task<ServicesResult<ApplicationUser>> ForgetPasswordAsync(ForgetPasswordDto model)
         {
-            var user = await userManager.FindByEmailAsync(model.UserName);
+            var user = await userManager.FindByNameAsync(model.UserName);
             if (user == null)
             {
                 // Don't reveal that the user does not exist or is not confirmed

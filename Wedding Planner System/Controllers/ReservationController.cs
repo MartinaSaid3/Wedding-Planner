@@ -75,7 +75,7 @@ namespace Wedding_Planner_System.Controllers
             //return CreatedAtAction("GetReservation", new { id = reservation.Id }, reservationDto);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "client")]
         // PUT: api/Reservations/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutReservation(int id, ReservationDto reservationDTO)
