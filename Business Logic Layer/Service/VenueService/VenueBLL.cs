@@ -1,5 +1,6 @@
 ﻿using Business_Logic_Layer.Dtos.VenueDtos;
 using Data_Access_Layer.Models;
+using Data_Access_Layer.Repo.RateRepo;
 using Data_Access_Layer.Repo.VenueRepo;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,11 +15,15 @@ namespace Business_Logic_Layer.Service.VenueService
     public class VenueBLL : IVenueBLL
     {
         private readonly IVenueDAL venueDAL;
+        private readonly IRateDAL _rateDAL;
         private readonly IPhotoServices photoservices;
 
-        public VenueBLL(IVenueDAL _VenueDAL,IPhotoServices _photoservices)
+        public VenueBLL(IVenueDAL _VenueDAL,
+            IRateDAL rateDAL,
+            IPhotoServices _photoservices)
         {
             venueDAL = _VenueDAL;
+            _rateDAL = rateDAL;
             photoservices = _photoservices;
         }
         public async Task<List<VenueWithReservationIdDto>> GetAllVenue()
@@ -34,7 +39,7 @@ namespace Business_Logic_Layer.Service.VenueService
 
                     VenueWithReservationIdDto venueDto = new VenueWithReservationIdDto
                     {
-                        Id=item.Id,
+                        Id = item.Id,
                         Name = item.Name,
                         Description = item.Description,
                         Location = item.Location,
@@ -44,7 +49,7 @@ namespace Business_Logic_Layer.Service.VenueService
                         MaxCapacity = item.MaxCapacity,
                         MinCapacity = item.MinCapacity,
                         PriceStartingFrom = item.MinPrice,
-                        ImagesData=item.ImagesData
+                        ImagesData = item.ImagesData
 
                     };
 
@@ -72,9 +77,10 @@ namespace Business_Logic_Layer.Service.VenueService
                 throw new Exception("This Venue Does Not Exist");
             }
 
+            var averageRate = await _rateDAL.GetAverageRateForVenueAsync(id);
             VenueDtoWithReservationData venueDto = new VenueDtoWithReservationData
             {
-                Id=v1.Id,
+                Id = v1.Id,
                 Name = v1.Name,
                 Description = v1.Description,
                 Location = v1.Location,
@@ -84,12 +90,12 @@ namespace Business_Logic_Layer.Service.VenueService
                 PriceStartingFrom = v1.MinPrice,
                 MinCapacity = v1.MinCapacity,
                 MaxCapacity = v1.MaxCapacity,
-                ImagesData=v1.ImagesData,
-                ReservationDates = v1.Reservations.Select(r => r.Date).ToList()
+                ImagesData = v1.ImagesData,
+                ReservationDates = v1.Reservations.Select(r => r.Date).ToList(),
+                AverageRate = averageRate
             };
 
             return venueDto;
-
         }
 
         public async Task<List<VenueDtoWithReservationData>> GetVenueByName(string name)
@@ -112,7 +118,7 @@ namespace Business_Logic_Layer.Service.VenueService
             {
                 VenueDtoWithReservationData venueDto = new VenueDtoWithReservationData
                 {
-                    Id=item.Id,
+                    Id = item.Id,
                     Name = item.Name,
                     Description = item.Description,
                     Location = item.Location,
@@ -122,7 +128,7 @@ namespace Business_Logic_Layer.Service.VenueService
                     MaxCapacity = item.MaxCapacity,
                     MinCapacity = item.MinCapacity,
                     PriceStartingFrom = item.MinPrice,
-                    ImagesData=item.ImagesData,
+                    ImagesData = item.ImagesData,
                     ReservationDates = item.Reservations.Select(r => r.Date).ToList()
                 };
 
@@ -151,7 +157,7 @@ namespace Business_Logic_Layer.Service.VenueService
             foreach (var item in VenueList)
             {
                 VenueDtoWithReservationData VenueDto = new VenueDtoWithReservationData
-                {   
+                {
                     Id = item.Id,
                     Name = item.Name,
                     Description = item.Description,
@@ -162,7 +168,7 @@ namespace Business_Logic_Layer.Service.VenueService
                     MaxCapacity = item.MaxCapacity,
                     MinCapacity = item.MinCapacity,
                     PriceStartingFrom = item.MinPrice,
-                    ImagesData=item.ImagesData,
+                    ImagesData = item.ImagesData,
                     ReservationDates = new List<DateTime>() // Initialize the list
                 };
 
@@ -201,7 +207,7 @@ namespace Business_Logic_Layer.Service.VenueService
                 VenueDtoWithReservationData VenueDto = new VenueDtoWithReservationData
                 {
 
-                    Id=item.Id,
+                    Id = item.Id,
                     Name = item.Name,
                     Description = item.Description,
                     Location = item.Location,
@@ -211,7 +217,7 @@ namespace Business_Logic_Layer.Service.VenueService
                     MaxCapacity = item.MaxCapacity,
                     MinCapacity = item.MinCapacity,
                     PriceStartingFrom = item.MinPrice,
-                    ImagesData=item.ImagesData,
+                    ImagesData = item.ImagesData,
 
                     ReservationDates = new List<DateTime>() // Initialize the list
                 };
@@ -262,7 +268,7 @@ namespace Business_Logic_Layer.Service.VenueService
             // save the venue to the database
 
             await venueDAL.SaveVenue(venue);
-            
+
 
         }
 
@@ -436,8 +442,8 @@ namespace Business_Logic_Layer.Service.VenueService
                 MinCapacity = v1.MinCapacity,
                 MaxCapacity = v1.MaxCapacity,
                 ImagesData = v1.ImagesData,
-                ReservationUser=v1.Reservations.Select(r => r.UserName).ToList()
-            
+                ReservationUser = v1.Reservations.Select(r => r.UserName).ToList()
+
             };
 
             return venueDto;

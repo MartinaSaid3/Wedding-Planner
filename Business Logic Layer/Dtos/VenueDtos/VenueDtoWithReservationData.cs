@@ -58,5 +58,7 @@ namespace Business_Logic_Layer.Dtos.VenueDtos
 
         public List<DateTime> ReservationDates { get; set; }
         public List<string> ImagesData { get; set; }
+
+        public double AverageRate { get; set; }
     }
 }
