@@ -20,11 +20,17 @@ public class RateDAL : IRateDAL
         await Context.SaveChangesAsync();
     }
 
-    public Task<double> GetAverageRateForVenueAsync(int venueId)
+    public async Task<double> GetAverageRateForVenueOrDefaultAsync(int venueId)
     {
-        return Context.Rates
-             .Where(r => r.VenueId == venueId)
-             .AverageAsync(r => r.Rating);
+        var query = Context.Rates
+             .Where(r => r.VenueId == venueId);
+
+        if (query.Any())
+        {
+            return await query.AverageAsync(r => r.Rating);
+        }
+
+        return default;
     }
 
     public async Task<Rate> GetRatingByVenueAndUser(int venueId, int userId)

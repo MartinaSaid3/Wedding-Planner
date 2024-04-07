@@ -5,7 +5,7 @@ namespace Data_Access_Layer.Repo.RateRepo;
 public interface IRateDAL
 {
     Task AddRating(Rate rate);
-    Task<double> GetAverageRateForVenueAsync(int venueId);
+    Task<double> GetAverageRateForVenueOrDefaultAsync(int venueId);
 
     Task<Rate> GetRatingByVenueAndUser(int venueId, int userId);
    

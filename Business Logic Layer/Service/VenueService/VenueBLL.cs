@@ -77,7 +77,7 @@ namespace Business_Logic_Layer.Service.VenueService
                 throw new Exception("This Venue Does Not Exist");
             }
 
-            var averageRate = await _rateDAL.GetAverageRateForVenueAsync(id);
+            var averageRate = await _rateDAL.GetAverageRateForVenueOrDefaultAsync(id);
             VenueDtoWithReservationData venueDto = new VenueDtoWithReservationData
             {
                 Id = v1.Id,
