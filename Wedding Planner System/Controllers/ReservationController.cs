@@ -69,7 +69,16 @@ namespace Wedding_Planner_System.Controllers
                 
                 BackgroundJob.Enqueue(() => emailsernder.SendEmail("Successful Reservation", reservationDto.Email, reservationDto.Email, "", "Congratulation Your Registration Done Successfully"));
 
+
+                // Schedule a rating reminder for the customer
                 RecurringJob.AddOrUpdate("Rate-recurring-job", () => ReservationBLL.Rate(), Cron.Hourly(24));
+
+                // Send "Thank you" email to the customer
+                BackgroundJob.Enqueue(() => emailsernder.SendEmail("Congratulations",
+                                                                    reservationDto.Email,
+                                                                    reservationDto.Email,
+                                                                    "",
+                                                                    "Thank you for choosing us! We're thrilled to have hosted you."));
 
                 return Ok();
             }

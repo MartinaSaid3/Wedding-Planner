@@ -17,9 +17,9 @@ namespace Data_Access_Layer.Repo.ReservationRepo
         Task PutReservation(int id, Reservation reservation);
         Task<bool> ReservationExists(int id);
         Task<Reservation> DeleteReservation(int id);
-
         Task<List<Reservation>> GetReservationsThreeDaysFromNow();
-        Task<List<Reservation>> GetReservationsForFeedback();
+
+        Task<List<Reservation>> GetReservationsForFeedback(DateTime yesterday);
 
         Task saveChanges();
 

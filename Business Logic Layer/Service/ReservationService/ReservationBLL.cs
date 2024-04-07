@@ -159,17 +159,27 @@ namespace Business_Logic_Layer.Service.ReservationService
 
         public async Task Rate()
         {
-            List<Reservation> reservations = await ReservationDAL.GetReservationsForFeedback();
+            DateTime yesterday = DateTime.Now.Date.AddDays(-1); // Get yesterday's date
+            List<Reservation> reservations = await ReservationDAL.GetReservationsForFeedback(yesterday);
+
             foreach (var reservation in reservations)
             {
-                BackgroundJob.Enqueue(() => _emailSender.
-                SendEmail("Feedback", reservation.Email,
-                "Client", "<a href='{ratingReviewUrl}'>Rate and Review</a>", $"Dear Client,\n\n" +
-                $"Thank you for choosing our venue. We hope you enjoyed your experience with us." +
-                $"\n\nPlease take a moment to rate and review our venue by clicking on the link below" +
-                $"\nYour feedback is valuable to us!\n\nBest regards,\nYour Venue Team"));
+                // Replace {ratingReviewUrl} with the actual URL for rating and reviewing the venue
+                string ratingReviewUrl = "https://example.com/rate-and-review";
+
+                // Send email reminder for rating
+                BackgroundJob.Enqueue(() => _emailSender.SendEmail("Feedback",
+                                                                    reservation.Email,
+                                                                    "Client",
+                                                                    $"<a href='{ratingReviewUrl}'>Rate and Review</a>",
+                                                                    $"Dear Client,\n\n" +
+                                                                    $"Thank you for choosing our venue. We hope you enjoyed your experience with us.\n\n" +
+                                                                    $"Please take a moment to rate and review our venue by clicking on the link below.\n\n" +
+                                                                    $"Your feedback is valuable to us!\n\n" +
+                                                                    $"Best regards,\nYour Venue Team"));
             }
         }
+
 
 
         public async Task<bool> AcceptReservation(int id)
