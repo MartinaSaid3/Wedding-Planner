@@ -15,11 +15,15 @@ namespace Business_Logic_Layer.Service.ReservationService
     {
         private Data_Access_Layer.Repo.ReservationRepo.IReservationDAL ReservationDAL;
         private readonly IVenueDAL venueDAL;
+        private readonly IEmailSender _emailSender;
         private Mapper PersonMapper;
-        public ReservationBLL(Data_Access_Layer.Repo.ReservationRepo.IReservationDAL _ReservationDAL,IVenueDAL _venueDAL)
+        public ReservationBLL(Data_Access_Layer.Repo.ReservationRepo.IReservationDAL _ReservationDAL,
+            IVenueDAL _venueDAL,
+            IEmailSender emailSender)
         {
             ReservationDAL = _ReservationDAL;
             venueDAL = _venueDAL;
+            _emailSender = emailSender;
             var configPeron = new MapperConfiguration(cfg => cfg.CreateMap<Reservation, ReservationDto>().ReverseMap());
             PersonMapper = new Mapper(configPeron);
         }
@@ -33,11 +37,11 @@ namespace Business_Logic_Layer.Service.ReservationService
                 Email = x.Email,
                 NumOfGuests = x.NumOfGuests,
                 SpecialRequests = x.SpecialRequests,
-                Service=x.Service,
-                UserName=x.UserName,
+                Service = x.Service,
+                UserName = x.UserName,
                 VenueId = x.VenueId,
-                TotalPrice=x.TotalPrice
-                
+                TotalPrice = x.TotalPrice
+
 
             }).ToList();
             return reservationDtos;
@@ -133,7 +137,7 @@ namespace Business_Logic_Layer.Service.ReservationService
         // Generate a unique token for the reservation
         public string GenerateUniqueToken()
         {
-           
+
             return Guid.NewGuid().ToString();
         }
 
@@ -144,8 +148,7 @@ namespace Business_Logic_Layer.Service.ReservationService
             List<Reservation> reservations = await ReservationDAL.GetReservationsThreeDaysFromNow();
             foreach (var reservation in reservations)
             {
-                EmailSender email = new EmailSender();
-                BackgroundJob.Enqueue(() => email.
+                BackgroundJob.Enqueue(() => _emailSender.
                 SendEmail("Reminder To You", reservation.Email,
                 " Client", "", $" , Congratulation, Your Wedding Party Will be After 3 Days From Now"));
             }
@@ -157,8 +160,7 @@ namespace Business_Logic_Layer.Service.ReservationService
             List<Reservation> reservations = await ReservationDAL.GetReservationsForFeedback();
             foreach (var reservation in reservations)
             {
-                EmailSender email = new EmailSender();
-                BackgroundJob.Enqueue(() => email.
+                BackgroundJob.Enqueue(() => _emailSender.
                 SendEmail("Feedback", reservation.Email,
                 "Client", "<a href='{ratingReviewUrl}'>Rate and Review</a>", $"Dear Client,\n\n" +
                 $"Thank you for choosing our venue. We hope you enjoyed your experience with us." +

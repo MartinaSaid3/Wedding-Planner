@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Wedding_Planner_System</RootNamespace>
+    <UserSecretsId>9ee18146-837d-45fd-9616-667d1e93d670</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

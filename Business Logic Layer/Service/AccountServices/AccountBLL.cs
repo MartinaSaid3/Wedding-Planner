@@ -21,6 +21,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Business_Logic_Layer.Service.AccountServices;
 //public record OmniaLoginDto(string Token, string Role);
@@ -139,7 +140,8 @@ public class AccountBLL : IAccountBLL
             new { email = model.Email, token = token },
             _httpContextAccessor.HttpContext!.Request.Scheme,
             _httpContextAccessor.HttpContext!.Request.Host);
-        string url = $"http://localhost:4200/account/reset?token={token}";
+        var urlEncodedToken = HttpUtility.UrlEncode(token);
+        string url = $"http://localhost:4200/account/reset?token={urlEncodedToken}";
 
         var forReset = await userManager.FindByNameAsync(user.UserName!);
         if (forReset != null)
