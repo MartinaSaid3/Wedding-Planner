@@ -23,10 +23,12 @@ namespace Wedding_Planner_System.Controllers
     public class ReservationController : ControllerBase
     {
         private Business_Logic_Layer.Service.ReservationService.IReservationBLL ReservationBLL;
+        private readonly IEmailSender emailsernder;
 
-        public ReservationController(Business_Logic_Layer.Service.ReservationService.IReservationBLL _reservationBLL)
+        public ReservationController(Business_Logic_Layer.Service.ReservationService.IReservationBLL _reservationBLL,IEmailSender _emailsernder)
         {
             ReservationBLL = _reservationBLL;
+            emailsernder = _emailsernder;
         }
         [Authorize(Roles = "Admin")]
         // GET: api/Reservations
@@ -47,19 +49,12 @@ namespace Wedding_Planner_System.Controllers
             return Ok(reservation);
         }
 
-        [Authorize(Roles = "client")]
+        //[Authorize(Roles = "client")]
         // POST: api/Reservations
         [HttpPost]
         public async Task<IActionResult> CreateReservation(ReservationDto reservationDto)
         {
-            //// Check if there is already a reservation on the same day
-            //if (await ReservationBLL.ReservationExistsForDate(reservationDto.Date))
-            //{
-            //    return BadRequest("A reservation already exists for the selected date.");
-            //}
-
-            // Generate a unique token for the reservation
-            //string uniqueToken = ReservationBLL.GenerateUniqueToken();
+            
 
             try
             {
@@ -68,6 +63,13 @@ namespace Wedding_Planner_System.Controllers
 
                 // Create reservation
                 await ReservationBLL.CreateReservation(reservationDto);
+
+                //background service
+                RecurringJob.AddOrUpdate("back-recurring-job", () => ReservationBLL.Back(), Cron.Hourly(24));
+                
+                BackgroundJob.Enqueue(() => emailsernder.SendEmail("Successful Reservation", reservationDto.Email, reservationDto.Email, "", "Congratulation Your Registration Done Successfully"));
+
+                RecurringJob.AddOrUpdate("Rate-recurring-job", () => ReservationBLL.Rate(), Cron.Hourly(24));
 
                 return Ok();
             }
@@ -84,18 +86,13 @@ namespace Wedding_Planner_System.Controllers
                 return StatusCode(500, "An error occurred while creating the reservation.");
             }
 
-          
 
-            //background service
-            //RecurringJob.AddOrUpdate("back-recurring-job", () => ReservationBLL.Back(), Cron.Hourly(24));
-            //EmailSender email = new EmailSender();
-            //BackgroundJob.Enqueue(() => email.SendEmail("Successful Reservation", reservationDto.Email, reservationDto.Email, "", "Congratulation Your Registration Done Successfully"));
+
             
-            //RecurringJob.AddOrUpdate("Rate-recurring-job", ()=> ReservationBLL.Rate(), Cron.Hourly(24));
 
-           
 
-            //return CreatedAtAction("GetReservation", new { id = reservation.Id }, reservationDto);
+
+
         }
 
         [Authorize(Roles = "client")]

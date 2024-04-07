@@ -20,6 +20,8 @@ using Microsoft.AspNetCore.Mvc.Routing;
 using Business_Logic_Layer.Service.EmailService;
 using Business_Logic_Layer.Service.AdminServices;
 using Data_Access_Layer.Repo.AdminRepo;
+using Business_Logic_Layer.Service.RateService;
+using Data_Access_Layer.Repo.RateRepo;
 
 namespace Wedding_Planner_System
 {
@@ -73,6 +75,9 @@ namespace Wedding_Planner_System
             builder.Services.AddScoped<IEmailSender, EmailSender>();
             builder.Services.AddScoped<IAdminBLL, AdminBLL>();
             builder.Services.AddScoped<IAdminDAL, AdminDAL>();
+            builder.Services.AddScoped<IRateDAL, RateDAL>();
+            builder.Services.AddScoped<IRateBLL, RateBLL>();
+
 
             builder.Services.AddHangfire(x => x.UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddHangfireServer();

@@ -33,6 +33,7 @@ namespace Business_Logic_Layer.Service.ReservationService
             var myData = reservationsFromDataBase.ToList();
             var reservationDtos = myData.Select(x => new ReservationWithTotalPriceDto
             {
+                Id=x.Id,
                 Date = x.Date,
                 Email = x.Email,
                 NumOfGuests = x.NumOfGuests,
@@ -52,6 +53,7 @@ namespace Business_Logic_Layer.Service.ReservationService
 
             ReservationWithTotalPriceDto reservationDto = new ReservationWithTotalPriceDto
             {
+                Id=reservation.Id,
                 UserName = reservation.UserName,
                 Date = reservation.Date,
                 NumOfGuests = reservation.NumOfGuests,

@@ -1,4 +1,5 @@
 ﻿using Business_Logic_Layer.Dtos.RatingDtos;
+using Business_Logic_Layer.Service.RateService;
 using Data_Access_Layer.Context;
 using Data_Access_Layer.Models;
 using Microsoft.AspNetCore.Http;
@@ -10,53 +11,44 @@ namespace Wedding_Planner_System.Controllers
     [ApiController]
     public class RateController : ControllerBase
     {
-        private readonly ApplicationEntity Context;
+        private readonly IRateBLL rateBLL;
 
-        public RateController(ApplicationEntity _context)
+        public RateController(IRateBLL _rateBLL)
         {
-            Context = _context;
+            rateBLL = _rateBLL;
         }
 
 
-        [HttpPost]
-        public async Task<IActionResult> SubmitReview(RatingDto reviewDto)
+        [HttpPost("submit")]
+        public async Task<IActionResult> SubmitRating(RatingDto ratingDto)
         {
-            // Check if the reviewDto is null or invalid
-            if (reviewDto == null)
+            // Validate ratingValue
+            if (ratingDto.Rating < 1 || ratingDto.Rating > 5)
             {
-                return BadRequest("Invalid review data.");
+                return BadRequest("Invalid rating value. Rating must be between 1 and 5.");
             }
 
-            // Authenticate user (implement authentication logic here)
-
-            // Check if the reservation associated with the review exists
-            var reservation = await Context.Reservations.FindAsync(reviewDto.ReservationId);
-            if (reservation == null)
+            // Check if the user has already submitted a rating for this venue
+            var existingRating = await rateBLL.GetRatingByVenueAndUser(ratingDto.VenueId, ratingDto.UserId);
+            if (existingRating != null)
             {
-                return NotFound("Reservation not found.");
+                return BadRequest("You have already submitted a rating for this venue.");
             }
 
-            // Check if the current date is after the reservation date
-            if (DateTime.Today < reservation.Date)
+            // Save rating to database
+            var rating = new Rate
             {
-                return BadRequest("You can only leave a review after your reservation date has passed.");
-            }
-
-            // Create a new Review entity and populate it with data from the DTO
-            Rate review = new Rate
-            {
-                ReservationId = reviewDto.ReservationId,
-                Rating = reviewDto.Rating,
-                Comment = reviewDto.ReviewText,
-
+                VenueId = ratingDto.VenueId,
+                UserId = ratingDto.UserId,
+                Rating = ratingDto.Rating
             };
 
-            // Save the review to the database
-            Context.Rates.Add(review);
-            await Context.SaveChangesAsync();
+            await rateBLL.AddRating(rating);
 
-            // Return a success response
-            return Ok("Review submitted successfully.");
+
+            return Ok("Rating submitted successfully.");
+
+
         }
 
     }

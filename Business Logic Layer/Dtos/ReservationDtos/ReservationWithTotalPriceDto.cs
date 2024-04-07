@@ -9,6 +9,7 @@ namespace Business_Logic_Layer.Dtos.ReservationDtos
 {
     public class ReservationWithTotalPriceDto
     {
+        public int Id { get; set; }
         public string UserName { get; set; }
 
         [Required]

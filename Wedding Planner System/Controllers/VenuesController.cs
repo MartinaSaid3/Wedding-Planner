@@ -39,6 +39,7 @@ namespace Wedding_Planner_System.Controllers
 
 
         // hai3red el reesrvations id m3ah
+        //[Authorize(Roles = "client,ServiceProvider")]
         [HttpGet]
         [Route("{id:int}", Name = "GetOneVenueRoute")]
         public async Task<ActionResult<VenueDtoWithReservationData>> GetVenueById(int id)
@@ -61,7 +62,7 @@ namespace Wedding_Planner_System.Controllers
 
 
 
-    
+        //[Authorize(Roles = "client")]
         [Route("/{venueId:int}/{selectedService:alpha}/{numberOfGuests:int}")]
         [HttpGet]
         public async Task<IActionResult> CalculateTotalPrice(int venueId, string selectedService, int numberOfGuests)
@@ -87,6 +88,7 @@ namespace Wedding_Planner_System.Controllers
 
 
         // hai3red el reservations dates
+        //[Authorize(Roles = "client")]
         [HttpGet]
         [Route("Name/{Name:alpha}", Name = "GetByName")]
         public async Task<ActionResult<VenueDtoWithReservationData>> GetVenueByName(string Name)
@@ -107,7 +109,7 @@ namespace Wedding_Planner_System.Controllers
 
         }
 
-
+        //[Authorize(Roles = "client")]
         [HttpGet]
         [Route("price/{price:int}", Name = "GetByPrice")]
         public async Task<ActionResult<VenueDtoWithReservationData>> GetVenueByPrice(double price)
@@ -130,7 +132,7 @@ namespace Wedding_Planner_System.Controllers
 
 
 
-
+        //[Authorize(Roles = "client")]
         [HttpGet]
         [Route("{Location:alpha}")]
         public async Task<ActionResult<VenueDtoWithReservationData>> GetVenueByLocation(string Location)
@@ -151,7 +153,7 @@ namespace Wedding_Planner_System.Controllers
         }
 
 
-
+        //[Authorize(Roles = "ServiceProvider")]
         [HttpPost]
         public async Task<IActionResult> SaveVenue(VenueDto VenueDto)
         {
@@ -181,7 +183,7 @@ namespace Wedding_Planner_System.Controllers
 
 
 
-
+        //[Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("{id}")]
         public async Task<ActionResult<Venue>> UpdateVenue(int id,VenueDto VenueDto)
@@ -213,9 +215,9 @@ namespace Wedding_Planner_System.Controllers
             }
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id}")]
-
         public async Task<IActionResult> RemoveVenue(int id)
         {
             try
@@ -234,6 +236,7 @@ namespace Wedding_Planner_System.Controllers
         }
 
         // admin accept request
+        //[Authorize(Roles = "Admin")]
         [HttpPut("accept/{id}")]
         public async Task<IActionResult> AcceptVenueSubmission(int id)
         {
@@ -250,6 +253,7 @@ namespace Wedding_Planner_System.Controllers
         }
 
         //amin reject l request
+        //[Authorize(Roles = "Admin")]
         [HttpPut("reject/{id}")]
         public async Task<IActionResult> RejectVenueSubmission(int id)
         {
@@ -264,7 +268,7 @@ namespace Wedding_Planner_System.Controllers
                 return NotFound(); // Venue not found
             }
         }
-
+        //[Authorize(Roles = "Admin")]
         [HttpGet("ReservationUsers/{id}")]
         public async Task<ActionResult<VenueWithReservationUserDto>> GetByIdWithUsers(int id)
         {

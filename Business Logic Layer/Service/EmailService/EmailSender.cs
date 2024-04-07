@@ -12,6 +12,7 @@ public class EmailSender : IEmailSender
     {
         _configuration = configuration;
     }
+
     public async Task SendEmail(string subject, string toEmail, string username, string Html, string message)
     {
         var apiKey = _configuration.GetValue<string>("SendGridApiKey")!;
